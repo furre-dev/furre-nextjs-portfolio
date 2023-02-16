@@ -1,107 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --redBg: linear-gradient(180deg, #EA3656 0%, #B92A43 100%), #EA3656;
+  --grayBg: linear-gradient(180deg, #454555 0%, #2b2b33 100%);
+  --whiteBg: linear-gradient(180deg, #F1F8F7 0%, #c4c4c4 100%), #F1F8F7;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
 body {
-  max-width: 100vw;
   overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+  background: "#F1F8F7";
+
+  transition: background .7s;
+}
+
+.whiteGrad {
+  background: linear-gradient(180deg, #F1F8F7 0%, #D5D5D5 100%), #F1F8F7;
+}
+
+.redGrad {
+  background: linear-gradient(180deg, #EA3656 0%, #B92A43 100%), #EA3656;
+}
+
+.fullShadow {
+  box-shadow: 0px 8px 19px 8px rgba(0, 0, 0, 0.25);
+}
+
+.iconShadow {
+  box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+.cara-icen {
+  height: 1px;
+}
+
+.navText {
+  transition: color .4s;
+}
+
+.logoLeft,
+.logoLeft>span {
+  transition: color .7s;
+}
+
+.portfolioCont::-webkit-scrollbar {
+  display: none;
+}
+
+.offerCard {
+  box-shadow: 4px 4px 19px 7px rgba(0, 0, 0, 0.25);
+}
+
+.polygon {
+  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+}
+
+
+
+
+html {
+  --scrollbarBG: #CFD8DC;
+  --thumbBG: #90A4AE;
+}
+
+body::-webkit-scrollbar {
+  width: 11px;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+.chatBox {
+  --scrollbarBG: #E5E7EB;
+  --thumbBG: #90A4AE;
+}
+
+.chatBox::-webkit-scrollbar {
+  width: 11px;
+}
+
+.chatBox {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+.chatBox::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+.chatBox::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+.mouseFloat {
+  animation: float 2s infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-20px);
+  }
+
+  100% {
+    transform: translatey(0px);
   }
 }
