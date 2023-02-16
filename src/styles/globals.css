@@ -9,6 +9,10 @@
 
 }
 
+#__next {
+  height: 100vh;
+}
+
 body {
   overflow-x: hidden;
   overflow-y: hidden;

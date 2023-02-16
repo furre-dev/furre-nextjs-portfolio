@@ -93,7 +93,7 @@ function Navbar() {
   return (
     <nav className={"sticky top-0 z-40 relative pointer-events-none"}>
       <div className={`${props.navBg[currentPath]} absolute h-full w-screen -z-10`}> </div>
-      <div className="flex justify-center lg:justify-between items-center py-5 lg:pb-32 2xl:py-10">
+      <div className="flex justify-center lg:justify-between items-center py-5  2xl:py-10">
         <Link href={"/"} className={`logoLeft pointer-events-auto font-outfit font-black text-xl md:text-2xl  2xl:text-2xl text-[${props.colors[currentPath].third}]`}>
           FURK<span className={`text-[${props.colors[currentPath].secondary}]`}>A</span>N.
         </Link>

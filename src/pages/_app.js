@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
 				/>
 			</Head>
 			<Chatbot />
-			<div className='App w-[90%] lg:max-w-[80%] 2xl:max-w-[80%] mx-auto'>
+			<div className='App w-[90%] h-full lg:max-w-[80%] 2xl:max-w-[80%] flex flex-col mx-auto'>
 				<Navbar />
 				<AnimatePresence mode='wait'>
 					<Component {...pageProps} key={currentPath} />
