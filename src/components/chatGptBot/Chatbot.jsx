@@ -104,15 +104,15 @@ export default function Chatbot(props) {
 					body: JSON.stringify({ inputVal }),
 				});
 				const data = await res.json();
-                const message = data.resp.replace(/"/g, "");
-                setResArr([...resArr, message]);
-                console.log(resMessage);
+				const message = data.resp.replace(/"/g, "");
+				setResArr([...resArr, message]);
+				console.log(resMessage);
 			} catch (error) {
 				console.log(error);
 				setApiResponse(false);
-                setSentArr([])
-                setResArr([])
-                setInputVal("");
+				setSentArr([])
+				setResArr([])
+				setInputVal("");
 			}
 		})();
 	}
@@ -172,7 +172,7 @@ export default function Chatbot(props) {
 						<div className="h-full w-full flex flex-col text-center justify-center items-center">
 							{!apiResponse ? (
 								<h2 className="font-semibold text-gray-500">
-									I'm very sorry, Caveman is very tired and went offline.
+									I'm very sorry, Caveman is too tired to speak right now.
 								</h2>
 							) : (
 								""

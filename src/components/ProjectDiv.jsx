@@ -23,7 +23,7 @@ export default function ProjectDiv(props) {
 							<span className="w-full absolute left-0 -z-10 text-[#EA3656]
 							lg:text-right lg:top-1
 							text-center top-[2px]">
-							Personal portfolio website.
+								Personal portfolio website.
 							</span>
 						</h1>
 						<p className="text-[#c5c5c5] font-roboto font-light">
@@ -57,7 +57,7 @@ export default function ProjectDiv(props) {
 						md:top-40 md:left-2/4 md:-translate-x-2/4
 						sm:top-56
 						top-72 w-full"
-						
+
 						alt="Macbook mockup with preview of project"
 						src="/projectMockup.png"
 					/>

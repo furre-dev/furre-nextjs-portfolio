@@ -3,7 +3,7 @@ import Head from "next/head";
 import { BsTelephone, BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs";
 import { IoMailOutline } from "react-icons/io5";
 import { SiDiscord } from "react-icons/si";
-
+import ContactForm from "@/components/ContactForm";
 import { motion as m } from "framer-motion";
 
 export default function Contact() {
@@ -18,7 +18,7 @@ export default function Contact() {
 	};
 
 	useEffect(() => {
-		document.body.style.background = "#EA9FA0";
+		document.body.style.background = "#E29899";
 	}, []);
 
 	return (
@@ -126,52 +126,7 @@ export default function Contact() {
 					alt="spiky gray waves for the background"
 					src="./grayWaves.svg"
 				/>
-				<div className="2xl:h-[30rem] lg:h-[22rem] lg:w-[20rem] 2xl:w-[25rem] rounded-t-3xl fixed bottom-0 left-2/4 -translate-x-2/4 bg-[#F1F8F7] fullShadow">
-					<div className="h-1/6 flex justify-center items-center">
-						<h2 className="font-outfit text-2xl">Get in touch.</h2>
-					</div>
-					<div className="h-5/6">
-						<form
-							className="flex flex-col w-3/4 mx-auto h-full space-y-6"
-							action="https://formsubmit.co/furkan_abay@hotmail.com"
-							method="POST"
-						>
-							<input
-								className="px-1 font-outfit  h-9 outline-none border border-[#c4c4c4] bg-transparent rounded-lg text-black"
-								type="text"
-								name="name"
-								placeholder="Name"
-								required
-							/>
-							<input
-								className="px-1 font-outfit  h-9 outline-none border border-[#c4c4c4] bg-transparent rounded-lg text-black"
-								type="email"
-								name="email"
-								placeholder="E-Mail"
-								required
-							/>
-							<input type="hidden" name="_captcha" value="false" />
-							<input
-								type="hidden"
-								name="_next"
-								value="http://localhost:3000/contact"
-							/>
-							<textarea
-								className="px-1 font-outfit  h-36 outline-none border border-[#c4c4c4] bg-transparent rounded-lg text-black"
-								type="text"
-								name="message"
-								placeholder="Your message..."
-								required
-							/>
-							<button
-								className="bg-[#EA3656] w-max mx-auto px-10 py-2 rounded-xl text-[#F1F8F7] font-outfit font-black"
-								type="submit"
-							>
-								SUBMIT
-							</button>
-						</form>
-					</div>
-				</div>
+				<ContactForm />
 			</div>
 		</>
 	);

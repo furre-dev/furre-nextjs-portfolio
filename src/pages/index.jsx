@@ -1,6 +1,7 @@
 import { motion as m } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image"
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -34,24 +35,28 @@ export default function Home() {
 							</m.p>
 						</div>
 						<div className="buttons pointer-events-auto flex 2xl:block mt-10 2xl:mt-24 space-x-2 2xl:space-x-6">
-							<m.button
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								transition={{ delay: 0.5 }}
-								className="font-lato font-black text-md bg-[#EA3656] text-[#D9F0EE] w-40 2xl:w-56 h-12 rounded-2xl
-          hover:bg-[#bb2b45] transition-all duration-300"
-							>
-								Get in touch!
-							</m.button>
-							<m.button
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								transition={{ delay: 0.7 }}
-								className="font-lato font-black text-md w-40 2xl:w-48 h-12 rounded-2xl text-[#EA3656] border border-2 border-[#EA3656]
-           hover:text-[#ff5e7b] hover:border-[#ff5e7b] lg:hover:-translate-y-1 transition-all duration-300"
-							>
-								See my work!
-							</m.button>
+							<Link href={"/contact"}>
+								<m.button
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ delay: 0.5 }}
+									className="font-lato font-black text-md bg-[#EA3656] text-[#D9F0EE] w-40 2xl:w-56 h-12 rounded-2xl
+          										hover:bg-[#bb2b45] transition-all duration-300"
+								>
+									Get in touch!
+								</m.button>
+							</Link>
+							<Link href={"/portfolio"}>
+								<m.button
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ delay: 0.7 }}
+									className="font-lato font-black text-md w-40 2xl:w-48 h-12 rounded-2xl text-[#EA3656] border border-2 border-[#EA3656]
+           										hover:text-[#ff5e7b] hover:border-[#ff5e7b] lg:hover:-translate-y-1 transition-all duration-300"
+								>
+									See my work!
+								</m.button>
+							</Link>
 						</div>
 						<m.img
 							initial={{ scale: 0 }}
