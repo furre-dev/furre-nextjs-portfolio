@@ -94,7 +94,9 @@ function Navbar() {
     <nav className={"sticky top-0 z-40 relative pointer-events-none"}>
       <div className="absolute h-full w-screen -z-10"> </div>
       <div className="flex justify-center lg:justify-between items-center py-5  2xl:py-10">
-        <Link href={"/"} className={`logoLeft pointer-events-auto font-outfit font-black text-xl md:text-2xl  2xl:text-2xl text-[${props.colors[currentPath].third}]`}>
+        <Link href={"/"} 
+        style={{color: props.colors[currentPath].third}}
+        className={"logoLeft pointer-events-auto font-outfit font-black text-xl md:text-2xl  2xl:text-2xl"}>
           FURK<span 
           style={{color: props.colors[currentPath].secondary }}
           >A</span>N.
