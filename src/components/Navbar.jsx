@@ -42,10 +42,6 @@ function Navbar() {
   let currentPath = usePathname();
   console.log(currentPath)
   const props = {
-    navBg: {
-      "/about": "hidden",
-      "/": "hidden"
-    },
     colors: {
       /* Color Palette!
       Red: #EA3656,
@@ -56,21 +52,25 @@ function Navbar() {
         main: "#D9F0EE",
         secondary: "#EA3656",
         third: "#454555",
+        hover: "#454555"
       },
       "/about": {
         main: "#D9F0EE",
         secondary: "#D9F0EE",
         third: "#F1F8F7",
+        hover: "#454555"
       },
       "/portfolio": {
         main: "#D9F0EE",
         secondary: "#EA3656",
         third: "#F1F8F7",
+        hover: "#454555"
       },
       "/contact": {
         main: "#D9F0EE",
         secondary: "#EA3656",
         third: "#F1F8F7",
+        hover: "#454555"
       }
     }
   }
@@ -92,24 +92,36 @@ function Navbar() {
 
   return (
     <nav className={"sticky top-0 z-40 relative pointer-events-none"}>
-      <div className={`${props.navBg[currentPath]} absolute h-full w-screen -z-10`}> </div>
+      <div className="absolute h-full w-screen -z-10"> </div>
       <div className="flex justify-center lg:justify-between items-center py-5  2xl:py-10">
         <Link href={"/"} className={`logoLeft pointer-events-auto font-outfit font-black text-xl md:text-2xl  2xl:text-2xl text-[${props.colors[currentPath].third}]`}>
-          FURK<span className={`text-[${props.colors[currentPath].secondary}]`}>A</span>N.
+          FURK<span 
+          style={{color: props.colors[currentPath].secondary }}
+          >A</span>N.
         </Link>
         <ul className="space-x-16 hidden lg:flex items-center text-black">
-          <li className={`navText  items-center pointer-events-auto font-outfit font-medium text-lg lg:text-base text-[${props.colors[currentPath].third}] hover:text-[#7E1946]`}>
+          <li 
+          style={{color: props.colors[currentPath].third}}
+          className={"navText  items-center pointer-events-auto font-outfit font-medium text-lg lg:text-base hover:text-[#7E1946]"}>
             <Link href={"/"}>Home</Link>
 
           </li>
-          <li className={`navText  hover:text-[#7E1946] pointer-events-auto font-outfit font-medium text-lg lg:text-base text-[${props.colors[currentPath].third}]`}>
+          <li 
+          style={{color: props.colors[currentPath].third}}
+          className={"navText  hover:text-[#7E1946] pointer-events-auto font-outfit font-medium text-lg lg:text-base"}>
             <Link href={"/about"}>About</Link>
 
           </li>
-          <li className={`navText hover:text-[#7E1946] pointer-events-auto font-outfit font-medium text-lg lg:text-base text-[${props.colors[currentPath].third}]`}><Link href={"/portfolio"}>Portfolio</Link></li>
-          <li className={`navText hover:text-[#7E1946] pointer-events-auto font-outfit font-medium text-lg lg:text-base text-[${props.colors[currentPath].third}]`}><Link href={"/contact"}>Contact</Link></li>
+          <li 
+          style={{color: props.colors[currentPath].third}}
+          className={"navText hover:text-[#7E1946] pointer-events-auto font-outfit font-medium text-lg lg:text-base"}><Link href={"/portfolio"}>Portfolio</Link></li>
+          <li 
+          style={{color: props.colors[currentPath].third}}
+          className={"navText hover:text-[#7E1946] pointer-events-auto font-outfit font-medium text-lg lg:text-base"}><Link href={"/contact"}>Contact</Link></li>
           <div className="flex items-center space-x-8">
-            <li className={`navText hover:text-[#7E1946] pointer-events-auto font-outfit font-medium text-lg lg:text-base text-[${props.colors[currentPath].third}]`}><a href="https://github.com/furreabay" target={"_blank"}>Github</a></li>
+            <li 
+            style={{color: props.colors[currentPath].third}}
+            className={"navText hover:text-[#7E1946] pointer-events-auto font-outfit font-medium text-lg lg:text-base"}><a href="https://github.com/furreabay" target={"_blank"}>Github</a></li>
             <li className={`pointer-events-auto relative cursor-pointer text-lg lg:text-base text-${discordStatus}-600`}>
               <DcIcon open={() => setHoverIcon(true)} close={() => setHoverIcon(false)} status={discordStatus} />
               {/* <IoLogoDiscord size="1.5rem" onMouseEnter={() => setTooltip(true)} onMouseLeave={() => setTooltip(false)} /> */}

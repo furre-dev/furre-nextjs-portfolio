@@ -28,15 +28,33 @@ export default function Contact() {
 			</Head>
 			<div className="flex flex-col items-center justify-center 2xl:pt-10">
 				<div className="space-y-8 flex flex-col">
-					<h2 className="relative font-outfit font-black text-8xl text-[#F1F8F7]">
+					<m.h2
+						initial={{ x: "1600px" }}
+						animate={{ x: "0px" }}
+						transition={{
+							delay: 0.3,
+							duration: 0.7,
+							type: "spring",
+							bounce: 0.4,
+						}}
+						className="relative font-outfit font-black text-8xl text-[#F1F8F7]"
+					>
 						Furkan Abay
 						<span className="absolute top-[6px]  left-0 text-[#EA3656] -z-10 select-none">
 							Furkan Abay
 						</span>
-					</h2>
+					</m.h2>
 					<div className="flex text-[1.3rem] text-[#F1F8F7] justify-around">
 						{/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-						<div
+						<m.div
+							initial={{ x: "-1500px" }}
+							animate={{ x: "0px" }}
+							transition={{
+								delay: 0.6,
+								duration: 0.7,
+								type: "spring",
+								bounce: 0.4,
+							}}
 							onClick={() => setTransformPhone(!transformPhone)}
 							className="w-52 h-10 bg-[#EA3656] rounded-xl flex cursor-pointer overflow-hidden
 						hover:bg-[#bb2b44] transition-colors duration-400"
@@ -54,9 +72,17 @@ export default function Contact() {
 									</p>
 								</div>
 							</m.div>
-						</div>
+						</m.div>
 						{/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-						<div
+						<m.div
+							initial={{ x: "-1500px" }}
+							animate={{ x: "0px" }}
+							transition={{
+								delay: 0.8,
+								duration: 0.7,
+								type: "spring",
+								bounce: 0.4,
+							}}
 							onClick={() => setTransformEmail(!transformEmail)}
 							className="w-52 h-10 bg-[#EA3656] rounded-xl flex cursor-pointer overflow-hidden
 						hover:bg-[#bb2b44] transition-colors duration-400"
@@ -74,12 +100,16 @@ export default function Contact() {
 									</p>
 								</div>
 							</m.div>
-						</div>
+						</m.div>
 					</div>
-					<div className="text-2xl text-[#F1F8F7] flex justify-around px-10">
+					<m.div 
+					initial={{opacity: 0}}
+					animate={{opacity: 1}}
+					transition={{duration: 1, delay: 1}}
+					className="text-2xl text-[#F1F8F7] flex justify-around px-10">
 						<m.a
 							whileHover={{ scale: 1.2, rotate: "5deg" }}
-							transition={{ duration: 0.4, type: "spring", bounce: .5 }}
+							transition={{ duration: 0.4, type: "spring", bounce: 0.5 }}
 							target="_blank"
 							rel="noreferrer"
 							href="https://www.linkedin.com/in/furkan-abay-04b33224b/"
@@ -90,7 +120,7 @@ export default function Contact() {
 						</m.a>
 						<m.a
 							whileHover={{ scale: 1.2, rotate: "5deg" }}
-							transition={{ duration: 0.4, type: "spring", bounce: .5 }}
+							transition={{ duration: 0.4, type: "spring", bounce: 0.5 }}
 							target="_blank"
 							rel="noreferrer"
 							href="https://github.com/furreabay"
@@ -102,7 +132,7 @@ export default function Contact() {
 						<m.button
 							whileHover={{ scale: 1.2, rotate: "5deg" }}
 							whileTap={{ scale: 1 }}
-							transition={{ duration: 0.4, type: "spring", bounce: .5 }}
+							transition={{ duration: 0.4, type: "spring", bounce: 0.5 }}
 							className="iconShadow bg-[#ea9fa062] w-10 aspect-square"
 							type="button"
 						>
@@ -110,7 +140,7 @@ export default function Contact() {
 						</m.button>
 						<m.a
 							whileHover={{ scale: 1.2, rotate: "5deg" }}
-							transition={{ duration: 0.4, type: "spring", bounce: .5 }}
+							transition={{ duration: 0.4, type: "spring", bounce: 0.5 }}
 							target="_blank"
 							rel="noreferrer"
 							href="https://instagram.com/furreabay"
@@ -119,9 +149,17 @@ export default function Contact() {
 						>
 							<BsInstagram className="m-auto" />
 						</m.a>
-					</div>
+					</m.div>
 				</div>
-				<img
+				<m.img
+					initial={{ y: "600px" }}
+					animate={{ y: "60px" }}
+					transition={{
+						delay: 0.7,
+						duration: 0.7,
+						type: "spring",
+						bounce: 0.4,
+					}}
 					className="pointer-events-none -z-50 fixed -bottom-16 left-0 w-screen"
 					alt="spiky gray waves for the background"
 					src="./grayWaves.svg"
@@ -130,5 +168,4 @@ export default function Contact() {
 			</div>
 		</>
 	);
-
 }
