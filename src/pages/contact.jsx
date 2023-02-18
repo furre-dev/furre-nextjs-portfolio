@@ -53,7 +53,7 @@ export default function Contact() {
 								delay: 0.6,
 								duration: 0.7,
 								type: "spring",
-								bounce: 0.4,
+								bounce: 0.2,
 							}}
 							onClick={() => setTransformPhone(!transformPhone)}
 							className="w-52 h-10 bg-[#EA3656] rounded-xl flex cursor-pointer overflow-hidden
@@ -75,13 +75,13 @@ export default function Contact() {
 						</m.div>
 						{/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 						<m.div
-							initial={{ x: "-1500px" }}
+							initial={{ x: "1500px" }}
 							animate={{ x: "0px" }}
 							transition={{
-								delay: 0.8,
+								delay: 0.6,
 								duration: 0.7,
 								type: "spring",
-								bounce: 0.4,
+								bounce: 0.2,
 							}}
 							onClick={() => setTransformEmail(!transformEmail)}
 							className="w-52 h-10 bg-[#EA3656] rounded-xl flex cursor-pointer overflow-hidden

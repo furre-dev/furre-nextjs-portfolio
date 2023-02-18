@@ -70,6 +70,21 @@ export default function Portfolio() {
 							pixel, turning complex problems into simple, elegant solutions.
 							Let's turn your next big idea into a reality.
 						</m.p>
+						<m.button 
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{
+							delay: 1.5,
+							duration: 0.7,
+							type: "spring",
+							bounce: 0.4,
+						}}
+						type="button" className="text-[#EA3656] font-outfit font-black bg-[#F1F8F7] py-3 px-10 rounded-xl	text-sm
+						hover:scale-95 transition-all duration-400">
+							<a target={"_blank"} href="https://github.com/furreabay?tab=repositories">
+							ALL PROJECTS
+							</a>
+							</m.button>
 					</div>
 					<m.img
 						initial={{ y: "400px" }}
