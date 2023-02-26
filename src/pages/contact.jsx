@@ -19,6 +19,7 @@ export default function Contact() {
 
 	useEffect(() => {
 		document.body.style.background = "#E29899";
+		document.body.style.overflowY ="hidden"
 	}, []);
 
 	return (
@@ -129,15 +130,6 @@ export default function Contact() {
 						>
 							<BsGithub className="m-auto" />
 						</m.a>
-						<m.button
-							whileHover={{ scale: 1.2, rotate: "5deg" }}
-							whileTap={{ scale: 1 }}
-							transition={{ duration: 0.4, type: "spring", bounce: 0.5 }}
-							className="iconShadow bg-[#ea9fa062] w-10 aspect-square"
-							type="button"
-						>
-							<SiDiscord className="m-auto" />
-						</m.button>
 						<m.a
 							whileHover={{ scale: 1.2, rotate: "5deg" }}
 							transition={{ duration: 0.4, type: "spring", bounce: 0.5 }}

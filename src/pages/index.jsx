@@ -7,6 +7,7 @@ import { useEffect } from "react";
 export default function Home() {
 	useEffect(() => {
 		document.body.style.background = "#F1F8F7";
+		document.body.style.overflowY ="hidden"
 	}, []);
 	return (
 		<>

@@ -12,6 +12,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     document.body.style.background = "#454555"
+		document.body.style.overflowY ="hidden"
   },[])
 
 	return (
