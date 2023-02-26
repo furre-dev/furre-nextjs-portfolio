@@ -1,6 +1,13 @@
 import {motion as m } from "framer-motion"
+import {useRef, useEffect} from "react";
 
 export default function ContactForm() {
+    
+    function preventDefault(e){
+        e.preventDefault();
+        console.log("ebem")
+    }
+
     return (
         <m.div
         initial={{opacity: 0}}
@@ -48,7 +55,7 @@ export default function ContactForm() {
                         placeholder="Your message..."
                         required
                     />
-                    <button
+                    <button onClick={preventDefault}
                         className="bg-[#EA3656] w-max mx-auto px-10 py-2 rounded-xl text-[#F1F8F7] font-outfit font-black"
                         type="submit"
                     >
