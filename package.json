@@ -2,7 +2,10 @@
   "name": "portfolionextv2",
   "version": "0.1.0",
   "private": true,
+  "type": "Commonjs",
+  "proxy": "http://localhost:5000/api",
   "scripts": {
+    "devmon": "nodemon server.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
