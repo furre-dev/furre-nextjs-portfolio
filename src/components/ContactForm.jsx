@@ -1,24 +1,20 @@
-import {motion as m } from "framer-motion"
-import {useRef, useEffect} from "react";
+import { motion as m } from "framer-motion"
+import { useRef, useEffect } from "react";
 
 export default function ContactForm() {
-    
-    function preventDefault(e){
-        e.preventDefault();
-        console.log("ebem")
-    }
+
 
     return (
         <m.div
-        initial={{opacity: 0}}
-		animate={{opacity: 1 }}
-		transition={{
-		delay: 0.9,
-		duration: 0.7,
-		type: "spring",
-		bounce: 0.4,
-		}}
-        className="py-1 2xl:h-[30rem] lg:h-[22rem] lg:w-[20rem] 2xl:w-[25rem] rounded-t-3xl fixed bottom-0 left-2/4 -translate-x-2/4 bg-[#F1F8F7] fullShadow">
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+                delay: 0.9,
+                duration: 0.7,
+                type: "spring",
+                bounce: 0.4,
+            }}
+            className="py-1 2xl:h-[30rem] lg:h-[22rem] lg:w-[20rem] 2xl:w-[25rem] rounded-t-3xl fixed bottom-0 left-2/4 -translate-x-2/4 bg-[#F1F8F7] fullShadow">
             <div className="h-1/6 flex justify-center items-center">
                 <h2 className="font-outfit text-xl 2xl:text-2xl">Contact me!</h2>
             </div>
@@ -55,7 +51,7 @@ export default function ContactForm() {
                         placeholder="Your message..."
                         required
                     />
-                    <button onClick={preventDefault}
+                    <button
                         className="bg-[#EA3656] w-max mx-auto px-10 py-2 rounded-xl text-[#F1F8F7] font-outfit font-black"
                         type="submit"
                     >

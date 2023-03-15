@@ -2,11 +2,14 @@ import { motion as m } from "framer-motion";
 
 export default function ProjectDiv(props) {
 	const index = props.index;
+	const src = props.src;
+	const title = props.title;
+	const text = props.text;
 
 	return (
 		<div className="w-screen relative h-screen flex justify-center items-center flex-none snap-start overflow-hidden
-		">
-			<div className="w-[80%]  relative flex  
+			">
+			<div className="w-[80%] mt-24  relative flex  
 			lg:justify-end lg:items-center lg:h-max
 			justify-center h-[70%]">
 				<div className=" 
@@ -19,16 +22,15 @@ export default function ProjectDiv(props) {
 					2xl:text-7xl
 					lg:text-5xl
 					text-6xl">
-							Personal portfolio website.
+							{title}
 							<span className="w-full absolute left-0 -z-10 text-[#EA3656]
 							lg:text-right lg:top-1
 							text-center top-[2px]">
-								Personal portfolio website.
+								{title}
 							</span>
 						</h1>
 						<p className="text-[#c5c5c5] font-roboto font-light">
-							This is my personal portfolio website. This project was developed
-							using React.js and Node.js
+							{text}
 						</p>
 					</div>
 					<div className="sm:space-x-10
@@ -59,7 +61,7 @@ export default function ProjectDiv(props) {
 						top-72 w-full"
 
 						alt="Macbook mockup with preview of project"
-						src="/projectMockup.png"
+						src={src}
 					/>
 				</div>
 			</div >
