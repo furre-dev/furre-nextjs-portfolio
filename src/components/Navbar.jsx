@@ -48,8 +48,6 @@ function Navbar() {
     const isContactPage = router.asPath === '/contact'
    */
 
-  console.log(router.asPath)
-
   const props = {
     colors: {
       /* Color Palette!
@@ -104,7 +102,7 @@ function Navbar() {
       <div className="absolute h-full w-screen -z-10"> </div>
       <div className="flex justify-center lg:justify-between items-center py-5  2xl:py-10">
         <Link href={"/"}
-          style={{ color: props.colors[router.asPath].third }}
+          style={{ color: props.colors[router.asPath].main }}
           className={"logoLeft pointer-events-auto font-outfit font-black text-xl md:text-2xl  2xl:text-2xl"}>
           FURK<span
             style={{ color: props.colors[router.asPath].secondary }}
