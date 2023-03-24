@@ -71,7 +71,7 @@ export default function Portfolio() {
 								pixel, turning complex problems into simple, elegant solutions.
 								Let's turn your next big idea into a reality.
 							</m.p>
-							<m.button
+							<m.a target={"_blank"} href="https://github.com/furreabay?tab=repositories"
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								transition={{
@@ -82,10 +82,10 @@ export default function Portfolio() {
 								}}
 								type="button" className="text-[#EA3656] font-outfit font-black bg-[#F1F8F7] py-3 px-10 rounded-xl	text-sm
 						hover:scale-95 transition-all duration-400">
-								<a className="z-50" target={"_blank"} href="https://github.com/furreabay?tab=repositories">
+								<p className="z-50" >
 									ALL PROJECTS
-								</a>
-							</m.button>
+								</p>
+							</m.a>
 						</div>
 						<m.img
 							initial={{ y: "400px" }}

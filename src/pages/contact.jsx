@@ -18,8 +18,9 @@ export default function Contact() {
 	};
 
 	useEffect(() => {
-		document.body.style.background = "#E29899";
-		document.body.style.overflowY ="hidden"
+		/* document.body.style.background = "#E29899"; */
+		document.body.style.background = "#3656EA";
+		document.body.style.overflowY = "hidden"
 	}, []);
 
 	return (
@@ -103,18 +104,18 @@ export default function Contact() {
 							</m.div>
 						</m.div>
 					</div>
-					<m.div 
-					initial={{opacity: 0}}
-					animate={{opacity: 1}}
-					transition={{duration: 1, delay: 1}}
-					className="text-2xl text-[#F1F8F7] flex justify-around px-10">
+					<m.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ duration: 1, delay: 1 }}
+						className="text-2xl text-[#F1F8F7] flex justify-around px-10">
 						<m.a
 							whileHover={{ scale: 1.2, rotate: "5deg" }}
 							transition={{ duration: 0.4, type: "spring", bounce: 0.5 }}
 							target="_blank"
 							rel="noreferrer"
 							href="https://www.linkedin.com/in/furkan-abay-04b33224b/"
-							className="flex iconShadow bg-[#ea9fa062] w-10 aspect-square"
+							className="flex iconShadow bg-[#ea9fa02e] w-10 aspect-square"
 							type="button"
 						>
 							<BsLinkedin className="m-auto" />
@@ -125,7 +126,7 @@ export default function Contact() {
 							target="_blank"
 							rel="noreferrer"
 							href="https://github.com/furreabay"
-							className="flex iconShadow bg-[#ea9fa062] w-10 aspect-square"
+							className="flex iconShadow bg-[#ea9fa02e] w-10 aspect-square"
 							type="button"
 						>
 							<BsGithub className="m-auto" />
@@ -136,7 +137,7 @@ export default function Contact() {
 							target="_blank"
 							rel="noreferrer"
 							href="https://instagram.com/furreabay"
-							className="flex iconShadow bg-[#ea9fa062] w-10 aspect-square"
+							className="flex iconShadow bg-[#ea9fa02e] w-10 aspect-square"
 							type="button"
 						>
 							<BsInstagram className="m-auto" />
