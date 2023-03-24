@@ -4,6 +4,7 @@ import DcTooltip from "./DcTooltip";
 import DcIcon from "./DcIcon";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link'
+import { useRouter } from "next/router";
 
 
 
@@ -39,7 +40,14 @@ function Navbar() {
 
 
 
-  let currentPath = usePathname();
+
+  const router = useRouter()
+
+  /*   const isHomePage = router.pathname === '/'
+    const isAboutPage = router.pathname === '/about'
+    const isContactPage = router.pathname === '/contact'
+   */
+
   const props = {
     colors: {
       /* Color Palette!
@@ -93,37 +101,37 @@ function Navbar() {
     <nav className={"sticky top-0 z-40 relative pointer-events-none"}>
       <div className="absolute h-full w-screen -z-10"> </div>
       <div className="flex justify-center lg:justify-between items-center py-5  2xl:py-10">
-        <Link href={"/"} 
-        style={{color: props.colors[currentPath].third}}
-        className={"logoLeft pointer-events-auto font-outfit font-black text-xl md:text-2xl  2xl:text-2xl"}>
-          FURK<span 
-          style={{color: props.colors[currentPath].secondary }}
+        <Link href={"/"}
+          style={{ color: props.colors[router.pathname].third }}
+          className={"logoLeft pointer-events-auto font-outfit font-black text-xl md:text-2xl  2xl:text-2xl"}>
+          FURK<span
+            style={{ color: props.colors[router.pathname].secondary }}
           >A</span>N.
         </Link>
         <ul className="space-x-16 hidden lg:flex items-center text-black">
           <li
-          style={{color: props.colors[currentPath].third}}
-          className={"navText  items-center pointer-events-auto font-outfit font-medium text-lg lg:text-base"}>
+            style={{ color: props.colors[router.pathname].third }}
+            className={"navText  items-center pointer-events-auto font-outfit font-medium text-lg lg:text-base"}>
             <Link
-            href={"/"}>Home</Link>
+              href={"/"}>Home</Link>
 
           </li>
-          <li style={{color: props.colors[currentPath].third}}
-          className={"navText  pointer-events-auto font-outfit font-medium text-lg lg:text-base"}>
-            <Link 
-            href={"/about"}>About</Link>
+          <li style={{ color: props.colors[router.pathname].third }}
+            className={"navText  pointer-events-auto font-outfit font-medium text-lg lg:text-base"}>
+            <Link
+              href={"/about"}>About</Link>
 
           </li>
-          <li 
-          style={{color: props.colors[currentPath].third}}
-          className={"navText pointer-events-auto font-outfit font-medium text-lg lg:text-base"}><Link href={"/portfolio"}>Portfolio</Link></li>
-          <li 
-          style={{color: props.colors[currentPath].third}}
-          className={"navText pointer-events-auto font-outfit font-medium text-lg lg:text-base"}><Link href={"/contact"}>Contact</Link></li>
+          <li
+            style={{ color: props.colors[router.pathname].third }}
+            className={"navText pointer-events-auto font-outfit font-medium text-lg lg:text-base"}><Link href={"/portfolio"}>Portfolio</Link></li>
+          <li
+            style={{ color: props.colors[router.pathname].third }}
+            className={"navText pointer-events-auto font-outfit font-medium text-lg lg:text-base"}><Link href={"/contact"}>Contact</Link></li>
           <div className="flex items-center space-x-8">
-            <li 
-            style={{color: props.colors[currentPath].third}}
-            className={"navText pointer-events-auto font-outfit font-medium text-lg lg:text-base"}><a href="https://github.com/furreabay" target={"_blank"}>Github</a></li>
+            <li
+              style={{ color: props.colors[router.pathname].third }}
+              className={"navText pointer-events-auto font-outfit font-medium text-lg lg:text-base"}><a href="https://github.com/furreabay" target={"_blank"}>Github</a></li>
             <li className={`pointer-events-auto relative cursor-pointer text-lg lg:text-base text-${discordStatus}-600`}>
               <DcIcon open={() => setHoverIcon(true)} close={() => setHoverIcon(false)} status={discordStatus} />
               {/* <IoLogoDiscord size="1.5rem" onMouseEnter={() => setTooltip(true)} onMouseLeave={() => setTooltip(false)} /> */}
