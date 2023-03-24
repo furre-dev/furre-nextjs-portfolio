@@ -102,9 +102,10 @@ export default function Portfolio() {
 						/>
 					</div>
 					<ProjectDiv src="/projectMockup.png" title="Personal portfolio website." text="This is my personal portfolio website. This project was developed
-							using React.js and Node.js" />
+							using React, Next and Node.js" />
 					<ProjectDiv src="/OneRideMockup.png" title="OneRide -  Car trip sharing app." text="This app makes people connect and share rides with each other. This project was developed
 							using React.js and Node.js" />
+					<ProjectDiv src="/helloWorldPic.png" title="Hello World - My largest project ever." text="This app cures diseases and makes life easy!" />
 				</HorizontalScroll>
 			</div>
 		</>

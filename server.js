@@ -3,8 +3,8 @@ require("dotenv").config();
 const OpenAI = require("openai");
 const { Configuration, OpenAIApi } = OpenAI;
 const configuration = new Configuration({
-	organization: "org-FvAOQX7RSqsU9RERF9L25E52",
-	apiKey: process.env.OPENAI_API_KEY,
+    organization: "org-FvAOQX7RSqsU9RERF9L25E52",
+    apiKey: process.env.OPENAI_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
@@ -19,11 +19,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post("/api", async (req, res) => {
-	const inputVal = req.body.inputVal;
-	if (inputVal.length < 25) {
-		const response = await openai.createCompletion({
-			model: "text-davinci-003",
-			prompt: `
+    const inputVal = req.body.inputVal;
+    if (inputVal.length < 25) {
+        const response = await openai.createCompletion({
+            model: "text-davinci-003",
+            prompt: `
         Pretend to be a caveman, and you really like the person "Furkan" and you only talk positive about him.
         Speak like a caveman with very bad grammar and alot of "ooga booga". Furkan's surname is Abay, but please don't call Furkan bu his surname, just say Furkan. Furkan is from Sweden. Furkan's family
         is originally from Turkey so Furkan can speak three languages. Turkish, Swedish and English.
@@ -55,20 +55,20 @@ app.post("/api", async (req, res) => {
         Q:"${inputVal}"
         A:
         `,
-			max_tokens: 100,
-			temperature: 0,
-		});
+            max_tokens: 100,
+            temperature: 0,
+        });
 
-		res.json({
-			resp: response.data.choices[0].text,
-		});
-	} else {
-		res.send("Too many characters?");
-	}
+        res.json({
+            resp: response.data.choices[0].text,
+        });
+    } else {
+        res.send("Too many characters?");
+    }
 });
 
 app.head("/api", (req, res) => {
-	res.status(200).end();
+    res.status(200).end();
 });
 
 app.listen(5000);
