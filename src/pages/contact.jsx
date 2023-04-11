@@ -19,7 +19,7 @@ export default function Contact() {
 
 	useEffect(() => {
 		/* document.body.style.background = "#E29899"; */
-		document.body.style.background = "#3656EA";
+		document.body.style.background = "#B39CD0";
 		document.body.style.overflowY = "hidden"
 	}, []);
 
