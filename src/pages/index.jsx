@@ -7,7 +7,7 @@ import { useEffect } from "react";
 export default function Home() {
 	useEffect(() => {
 		document.body.style.background = "#F1F8F7";
-		document.body.style.overflowY ="hidden"
+		document.body.style.overflowY = "hidden"
 	}, []);
 	return (
 		<>
@@ -41,7 +41,7 @@ export default function Home() {
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
 									transition={{ delay: 0.5 }}
-									className="font-lato font-black text-md bg-[#EA3656] text-[#D9F0EE] w-40 2xl:w-56 h-12 rounded-2xl
+									className="font-lato font-black text-md bg-[#EA3656] text-[#F1F8F7] w-40 2xl:w-56 h-12 rounded-2xl
           										hover:bg-[#bb2b45] transition-all duration-300"
 								>
 									Get in touch!
