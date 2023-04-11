@@ -97,7 +97,7 @@ function Navbar() {
   return (
     <nav className={"sticky top-0 z-40 relative pointer-events-none"}>
       <div className="absolute h-full w-screen -z-10"> </div>
-      {router &&
+      {router.asPath &&
         <div className="flex justify-center lg:justify-between items-center py-5  2xl:py-10">
           <Link href={"/"}
             style={{ color: props.colors[router.asPath].third }}
