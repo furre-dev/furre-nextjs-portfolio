@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import { useEffect } from "react";
 import { motion as m } from "framer-motion";
@@ -29,7 +31,7 @@ export default function About() {
 							initial={{ y: "-900px" }}
 							animate={{ y: 0 }}
 							transition={{ type: "spring", bounce: 0.4, delay: 0.2 }}
-							className="font-outfit font-black text-[#D9F0EE] 
+							className="font-display font-black text-[#D9F0EE] 
         2xl:text-[15rem] 2xl:max-w-[100%] 2xl:leading-[79.5%]
         lg:text-[10rem] 
         md:text-left
@@ -43,7 +45,7 @@ export default function About() {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ duration: 0.5, delay: 0.6 }}
-							className="bg-[#D9F0EE] py-5 w-[20rem] rounded-full text-[#EA3656] font-outfit font-black border-2
+							className="bg-[#D9F0EE] py-5 w-[20rem] rounded-full text-[#EA3656] font-display font-black border-2
             lg:mt-10
          hover:bg-transparent hover:text-[#D9F0EE] hover:scale-[1.02] hover:shadow-md transition-all duration-200 
         "
@@ -52,7 +54,7 @@ export default function About() {
 						</m.button>
 					</div>
 					<div
-						className="right-side  w-full flex  items-center font-outfit font-light
+						className="right-side  w-full flex  items-center font-display font-light
         md:pl-10 md:justify-between md:mt-0
         justify-center mt-10"
 					>

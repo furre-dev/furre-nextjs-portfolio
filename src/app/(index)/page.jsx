@@ -1,3 +1,5 @@
+"use client"
+
 import { motion as m } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image"
@@ -22,7 +24,7 @@ export default function Home() {
 								initial={{ x: "-1000px" }}
 								animate={{ x: 0 }}
 								transition={{ type: "spring", bounce: 0.4, delay: 0.2 }}
-								className="md:max-w-[30rem] sm:max-w-[27rem] text-7xl 2xl:text-9xl lg:text-8xl font-outfit font-bold max-w-full  2xl:min-w-[50rem] lg:min-w-[36rem] text-[#EA3656] text-center lg:text-left lg:ml-[-6px]"
+								className="md:max-w-[30rem] sm:max-w-[27rem] text-7xl 2xl:text-9xl lg:text-8xl font-display font-bold max-w-full  2xl:min-w-[50rem] lg:min-w-[36rem] text-[#EA3656] text-center lg:text-left lg:ml-[-6px]"
 							>
 								Hey! I'm Furkan Abay
 							</m.h2>
@@ -30,7 +32,7 @@ export default function Home() {
 								initial={{ x: "-1000px" }}
 								animate={{ x: 0 }}
 								transition={{ type: "spring", bounce: 0.4, delay: 0.3 }}
-								className="text-2xl 2xl:text-3xl  font-roboto font-normal text-[#454555] text-center lg:text-left  "
+								className="text-2xl 2xl:text-3xl  font-body font-normal text-[#454555] text-center lg:text-left  "
 							>
 								Front-end developer.
 							</m.p>
@@ -41,7 +43,7 @@ export default function Home() {
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
 									transition={{ delay: 0.5 }}
-									className="font-lato font-black text-md bg-[#EA3656] text-[#F1F8F7] w-40 2xl:w-56 h-12 rounded-2xl
+									className="font-body font-black text-md bg-[#EA3656] text-[#F1F8F7] w-40 2xl:w-56 h-12 rounded-2xl
           										hover:bg-[#bb2b45] transition-all duration-300"
 								>
 									Get in touch!
@@ -52,7 +54,7 @@ export default function Home() {
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
 									transition={{ delay: 0.7 }}
-									className="font-lato font-black text-md w-40 2xl:w-48 h-12 rounded-2xl text-[#EA3656] border border-2 border-[#EA3656]
+									className="font-body font-black text-md w-40 2xl:w-48 h-12 rounded-2xl text-[#EA3656] border border-2 border-[#EA3656]
            										hover:text-[#ff5e7b] hover:border-[#ff5e7b] lg:hover:-translate-y-1 transition-all duration-300"
 								>
 									See my work!
@@ -73,7 +75,7 @@ export default function Home() {
                           rounded-bl-[18rem] rounded-tr-3xl flex lg:flex-row flex-col items-center 
                           justify-around lg:px-28 pt-5 lg:pt-0 2xl:pt-5 pb-28 lg:pb-0 relative">
 
-          <h2 className="font-outfit 2xl:text-left text-center text-4xl 2xl:text-7xl lg:text-5xl w-96 text-[#D9F0EE] mb-10">What can I offer?</h2>
+          <h2 className="font-display 2xl:text-left text-center text-4xl 2xl:text-7xl lg:text-5xl w-96 text-[#D9F0EE] mb-10">What can I offer?</h2>
           <div className="w-[1px] h-[50%] bg-[#D9F0EE] mx-16"> </div>
           <div className="flex lg:flex-row flex-col lg:space-x-10 2xl:space-x-24 space-y-10 lg:space-y-0">
             <Cards text={"Front-end development for web applications"} icon={"./white-pc-icon.png"} />

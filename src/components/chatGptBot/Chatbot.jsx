@@ -28,7 +28,7 @@ export default function Chatbot(props) {
 	useEffect(() => {
 		async function fetchData() {
 			try {
-				const response = await fetch("http://localhost:5000/api", {
+				const response = await fetch("/api/openai-gpt", {
 					method: "HEAD",
 				});
 
@@ -56,14 +56,12 @@ export default function Chatbot(props) {
 
 	useEffect(() => {
 		setChatOpen(!chatOpen);
-		console.log(chatOpen);
 	}, [clicked]);
 
 	useEffect(() => {
 		{
 			chatOpen ? setToggleDirection("87%") : setToggleDirection("-4%");
 		}
-		console.log(toggleDirection);
 	}, [chatOpen]);
 
 	const colorPalette = {
@@ -96,7 +94,7 @@ export default function Chatbot(props) {
 		setSentArr(newSentArr);
 		(async () => {
 			try {
-				const res = await fetch("http://localhost:5000/api", {
+				const res = await fetch("/api/openai-gpt", {
 					method: "POST",
 					headers: {
 						"Content-type": "application/json",
@@ -117,7 +115,6 @@ export default function Chatbot(props) {
 		})();
 	}
 
-	let num = 0;
 	return (
 		<m.div
 			animate={{

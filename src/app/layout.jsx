@@ -1,15 +1,43 @@
-import "@/styles/globals.css";
-import Chatbot from "@/components/chatGptBot/Chatbot";
-import Navbar from "@/components/Navbar";
-import { AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
+"use client";
+
 import Head from "next/head";
+import "../styles/globals.css";
+import { Outfit, Lato } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Chatbot from "@/components/chatGptBot/Chatbot";
+import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
-export default function App({ Component, pageProps }) {
-	let currentPath = usePathname();
+const outfitFont = Outfit({
+	variable: "--display-font",
+	display: "swap",
+	subsets: ["latin"],
+	weight: ["100", "300", "400", "700", "900"],
+});
 
+const latoFont = Lato({
+	variable: "--body-font",
+	display: "swap",
+	subsets: ["latin"],
+	weight: ["100", "300", "400", "700", "900"],
+});
+
+export const metadata = {
+	title: "Furkan - Portfolio",
+	description: "Welcome to Furkan's Next.js portfolio",
+};
+
+
+export default function RootLayout({
+	// Layouts must accept a children prop.
+	// This will be populated with nested layouts or pages
+	children,
+}) {
 	return (
-		<>
+		<html
+			lang="en"
+			className={`${outfitFont.variable} ${latoFont.variable}`}
+		>
 			<Head>
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,13 +58,12 @@ export default function App({ Component, pageProps }) {
 					rel="stylesheet"
 				/>
 			</Head>
-			<Chatbot />
-			<div className='App w-[90%] h-full lg:max-w-[80%] 2xl:max-w-[80%] flex flex-col mx-auto'>
-				<Navbar />
-				<AnimatePresence mode='wait'>
-					<Component {...pageProps} key={currentPath} />
-				</AnimatePresence>
-			</div>
-		</>
+			<body
+				className={"flex flex-col mx-auto"}
+			>
+				<Chatbot />
+				<AnimatePresence mode='wait'>{children}</AnimatePresence>
+			</body>
+		</html>
 	);
 }

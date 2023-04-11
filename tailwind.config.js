@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: [
@@ -12,9 +14,9 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				lato: "Lato",
-				outfit: "Outfit",
-				roboto: "Roboto",
+				sans: ["var(--body-font)", ...defaultTheme.fontFamily.sans],
+				display: ["var(--display-font)", ...defaultTheme.fontFamily.sans],
+				body: ["var(--body-font)", ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},

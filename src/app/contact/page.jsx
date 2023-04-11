@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import { BsTelephone, BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs";
@@ -20,7 +22,7 @@ export default function Contact() {
 	useEffect(() => {
 		/* document.body.style.background = "#E29899"; */
 		document.body.style.background = "#B39CD0";
-		document.body.style.overflowY = "hidden"
+		document.body.style.overflowY = "hidden";
 	}, []);
 
 	return (
@@ -39,7 +41,7 @@ export default function Contact() {
 							type: "spring",
 							bounce: 0.4,
 						}}
-						className="relative font-outfit font-black text-8xl text-[#F1F8F7]"
+						className="relative font-display font-black text-8xl text-[#F1F8F7]"
 					>
 						Furkan Abay
 						<span className="absolute top-[6px]  left-0 text-[#EA3656] -z-10 select-none">
@@ -108,7 +110,8 @@ export default function Contact() {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ duration: 1, delay: 1 }}
-						className="text-2xl text-[#F1F8F7] flex justify-around px-10">
+						className="text-2xl text-[#F1F8F7] flex justify-around px-10"
+					>
 						<m.a
 							whileHover={{ scale: 1.2, rotate: "5deg" }}
 							transition={{ duration: 0.4, type: "spring", bounce: 0.5 }}
