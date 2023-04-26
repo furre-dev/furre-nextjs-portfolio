@@ -1,67 +1,86 @@
-To Do:
-- typescript
-- core web vitals / lighthouse optimization
-- SSR
-- atomic design
-- state machine
-- semantic html
-- metadata
-- structured schema data
+# https://furre.dev/
 
----
+## Overview
+Welcome to the Furre Portfolio project! This Next.js 13 application is built with TypeScript, utilizes app routes. It features OpenAI chatbot prompt engineering, semantic HTML, SEO optimization, and performance optimization to ensure good Core Web Vitals and Lighthouse scores.
 
-# Furre Portfolio
-Welcome to the Furre Portfolio project! This is a Next.js 13 application that utilizes app routes and is built with TypeScript. The project also includes OpenAI chatbot prompt engineering, semantic HTML for the most part, SEO optimization, and performance optimization for good Core Web Vitals and Lighthouse scores.
+<br/>
 
+## 🚀 Getting Started
+Follow these steps to set up the Furre Portfolio project locally:
 
-## Getting Started
-To get started with the project, you'll need to clone this repository and install the necessary dependencies:
+### Prerequisites
+Ensure that you have the following software installed on your system:
 
+- [Node.js](https://nodejs.org/en/download/)
+- [npm](https://www.npmjs.com/get-npm) (included with Node.js)
+
+### Installation
+
+1. Clone the repository:
 ```
 git clone https://github.com/furre-dev/furre-nextjs-portfolio.git
-cd furre-portfolio
+```
+
+2. Change to the project directory:
+```
+cd furre-nextjs-portfolio
+```
+
+3. Install the necessary dependencies:
+```
 npm install
 ```
-After installing the dependencies, make sure to create a `.env` file based on the `.env.example` file provided.
 
-You can then start the development server by running:
+4. Create a `.env` file based on the provided `.env.example` file.
 
+5. Start the development server:
 ```
 npm run dev
 ```
+
 This will start the Next.js development server at http://localhost:3000.
 
+<br/>
 
-## Linting
-This project includes lint-staged and simple-git-hooks to enforce code formatting and type checking before committing or pushing to the repository.
+## ✅ Linting and Type Checking
+This project employs lint-staged and simple-git-hooks to enforce code formatting and type checking before committing or pushing to the repository.
 
-The `*.{js,jsx,ts,tsx}` files are automatically formatted with rome when you commit your changes. Additionally, `npm run type-check` will run before pushing to the repository.
+`*.{js,jsx,ts,tsx}` files are automatically formatted with Rome when you commit your changes. Also, `npm run type-check` is executed before pushing to the repository.
 
+<br/>
 
-## Available Scripts
-In the project directory, you can run:
+## 📜 Available Scripts
+In the project directory, you can run the following commands:
+
+### Development Mode
 ```
 npm run dev
 ```
-Runs the app in the development mode.
-
+Runs the app in development mode.  
+<br/>
+### Production Mode
 ```
 npm start
 ```
-Starts the app in production mode.
-
+Starts the app in production mode.  
+<br/>
+### Linting
 ```
 npm run lint
 ```
-Lints the project's files.
-
+Lints the project files.  
+<br/>
+### Type Checking
 ```
 npm run type-check
 ```
-Checks the project's TypeScript types.
+Checks the project's TypeScript types.  
 
+<br/>
 
 ---
 
+<br/>
 
-Thank you for checking out the Furre Portfolio project!
+
+### Thank you for checking out the Furre Portfolio project!
