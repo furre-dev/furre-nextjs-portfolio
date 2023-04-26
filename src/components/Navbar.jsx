@@ -7,7 +7,6 @@ import DiscordStatus from "./DiscordStatus";
 
 function Navbar() {
 	const pathname = usePathname();
-
 	const [selectedColorScheme, setSelectedColorScheme] = useState("primary");
 
 	useEffect(() => {
@@ -75,6 +74,7 @@ function Navbar() {
 					N.
 				</Link>
 				<ul className="space-x-16 hidden lg:flex items-center text-black">
+					{pathname !== "/" ? 
 					<li
 						style={{ color: colors[selectedColorScheme].third }}
 						className={
@@ -83,6 +83,17 @@ function Navbar() {
 					>
 						<Link href={"/"}>Home</Link>
 					</li>
+					:
+					<li
+						style={{ color: colors[selectedColorScheme].second }}
+						className={
+							"navText  items-center pointer-events-auto font-display font-medium text-lg lg:text-base"
+						}
+					>
+						<Link href={"/"}>Home</Link>
+					</li>
+					}
+					{pathname !== "/about" ?
 					<li
 						style={{ color: colors[selectedColorScheme].third }}
 						className={
@@ -91,6 +102,16 @@ function Navbar() {
 					>
 						<Link href={"/about"}>About</Link>
 					</li>
+					:
+					<li
+						style={{ color: colors[selectedColorScheme].hover }}
+						className={
+							"navText  pointer-events-auto font-display font-medium text-lg lg:text-base"
+						}
+					>
+						<Link href={"/about"}>About</Link>
+					</li>}
+					{pathname !== "/portfolio" ?
 					<li
 						style={{ color: colors[selectedColorScheme].third }}
 						className={
@@ -98,7 +119,16 @@ function Navbar() {
 						}
 					>
 						<Link href={"/portfolio"}>Portfolio</Link>
-					</li>
+					</li>:
+					<li
+					style={{ color: colors[selectedColorScheme].second }}
+					className={
+						"navText pointer-events-auto font-display font-medium text-lg lg:text-base"
+					}
+				>
+					<Link href={"/portfolio"}>Portfolio</Link>
+				</li>}
+					{pathname !== "/contact" ?
 					<li
 						style={{ color: colors[selectedColorScheme].third }}
 						className={
@@ -107,6 +137,15 @@ function Navbar() {
 					>
 						<Link href={"/contact"}>Contact</Link>
 					</li>
+					:
+					<li
+						style={{ color: colors[selectedColorScheme].hover }}
+						className={
+							"navText pointer-events-auto font-display font-medium text-lg lg:text-base"
+						}
+					>
+						<Link href={"/contact"}>Contact</Link>
+					</li>}
 					<div className="flex items-center space-x-8">
 						<li
 							style={{ color: colors[selectedColorScheme].third }}

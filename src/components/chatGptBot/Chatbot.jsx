@@ -18,8 +18,6 @@ function uuidv4() {
 	);
 }
 
-const cavemanPic =
-	"https://media.discordapp.net/ephemeral-attachments/1008571040097632317/1072958691466289204/grid_0.webp?width=676&height=676";
 
 export default function Chatbot(props) {
 	const [apiResponse, setApiResponse] = useState(false);

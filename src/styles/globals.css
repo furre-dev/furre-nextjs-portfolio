@@ -6,7 +6,7 @@
   --redBg: linear-gradient(180deg, #EA3656 0%, #B92A43 100%), #EA3656;
   --grayBg: linear-gradient(180deg, #454555 0%, #2b2b33 100%);
   --whiteBg: linear-gradient(180deg, #F1F8F7 0%, #c4c4c4 100%), #F1F8F7;
-
+  --blueSkyGradient: linear-gradient(0deg, rgba(49, 70, 107, 1) 0%, rgba(5, 5, 50, 1) 100%);
 }
 
 #__next {
@@ -21,6 +21,7 @@ body {
 
   transition: background .7s;
 }
+
 
 .whiteGrad {
   background: linear-gradient(180deg, #F1F8F7 0%, #D5D5D5 100%), #F1F8F7;
