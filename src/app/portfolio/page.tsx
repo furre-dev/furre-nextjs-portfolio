@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import ProjectDiv from "@/components/ProjectDiv";
-import { motion as m, spring, useScroll } from "framer-motion";
+import { motion as m } from "framer-motion";
 import { TfiMouse } from "react-icons/tfi";
 import { AiOutlineArrowDown } from "react-icons/ai";
-import Head from "next/head";
-import Image from "next/image";
+import ProjectDiv from "src/components/ProjectDiv";
 
 export default function Portfolio() {
 	useEffect(() => {
@@ -16,9 +14,6 @@ export default function Portfolio() {
 
 	return (
 		<>
-			<Head>
-				<title>Portfolio</title>
-			</Head>
 			<main className="w-full lg:max-w-7xl px-4 mx-auto">
 				<div className="portfolioCont flex w-screen h-screen absolute top-0 left-0 snap-x snap-proximity overflow-x-scroll overflow-y-hidden">
 					{/* TODO: Fix this horizontal scroll */}

@@ -2,7 +2,13 @@ import { motion as m, AnimatePresence, spring } from "framer-motion";
 import { useState, useEffect } from "react";
 import { memo } from "react";
 
-const DcTooltip = (props) => {
+// rome-ignore lint/suspicious/noExplicitAny: <explanation>
+const DcTooltip = (props: {
+	func: any;
+	open: any;
+	close: any;
+	username: any;
+}) => {
 	const func = props.func;
 	const open = props.open;
 	const close = props.close;
@@ -12,7 +18,8 @@ const DcTooltip = (props) => {
 	const [usernameToolTip, setUsernameToolTip] = useState(false);
 	const [mousePos, setMousePos] = useState({});
 
-	const handleMouseMove = (window) => {
+	// rome-ignore lint/suspicious/noExplicitAny: <explanation>
+	const handleMouseMove = (window: any) => {
 		setMousePos({ x: window.event.clientX, y: window.event.clientY });
 		console.log(mousePos);
 	};
@@ -38,7 +45,7 @@ const DcTooltip = (props) => {
 					</p>
 					<div className="flex flex-col text-sm mt-2 font-display">
 						<div className="relative">
-							<p
+							<m.p
 								whileTap={{ scale: 0.9 }}
 								className="mb-2 text-lg cursor-pointer"
 								onMouseEnter={() => {
@@ -53,7 +60,7 @@ const DcTooltip = (props) => {
 								<span title="Click to copy!" className="text-[#5460E6]">
 									{dcNick}
 								</span>
-							</p>
+							</m.p>
 							{/* <p className="absolute -top-2 left-2/4 -translate-x-2/4 text-xs">Click to copy!</p> */}
 						</div>
 						<p className="text-[#454555]">

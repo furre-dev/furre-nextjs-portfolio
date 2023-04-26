@@ -1,10 +1,12 @@
 "use client";
 
 import { motion as m } from "framer-motion";
-import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+
+export const metadata = {
+	title: "Furkan - Portfolio - Home",
+};
 
 export default function Home() {
 	useEffect(() => {
@@ -14,9 +16,6 @@ export default function Home() {
 
 	return (
 		<>
-			<Head>
-				<title>Home</title>
-			</Head>
 			<main className="w-full lg:max-w-[90rem] px-4 mx-auto">
 				<div className="flex justify-center items-center h-4/5 w-full lg:pt-24 2xl:pt-0">
 					<div className="2xl:py-24 pb-20 relative w-full">

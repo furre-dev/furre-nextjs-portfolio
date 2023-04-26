@@ -1,11 +1,8 @@
-import { motion as m } from "framer-motion";
-
-export default function ProjectDiv(props) {
-	const index = props.index;
-	const src = props.src;
-	const title = props.title;
-	const text = props.text;
-
+export default function ProjectDiv({
+	src,
+	title,
+	text,
+}: { src: string; title: string; text: string }) {
 	return (
 		<div className="w-screen relative h-screen flex justify-center items-center flex-none snap-start overflow-hidden">
 			<div

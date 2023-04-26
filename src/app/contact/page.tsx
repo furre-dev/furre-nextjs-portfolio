@@ -1,12 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Head from "next/head";
 import { BsTelephone, BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs";
 import { IoMailOutline } from "react-icons/io5";
-import { SiDiscord } from "react-icons/si";
-import ContactForm from "@/components/ContactForm";
+
 import { motion as m } from "framer-motion";
+import ContactForm from "src/components/ContactForm";
+
+export const metadata = {
+	title: "Furkan - Portfolio - Contact",
+};
 
 export default function Contact() {
 	const [transformPhone, setTransformPhone] = useState(false);
@@ -27,9 +30,6 @@ export default function Contact() {
 
 	return (
 		<>
-			<Head>
-				<title>Contact</title>
-			</Head>
 			<main className="w-full lg:max-w-7xl px-4 mx-auto">
 				<div className="flex flex-col items-center justify-center 2xl:pt-10">
 					<div className="space-y-8 flex flex-col">
@@ -66,6 +66,7 @@ export default function Contact() {
 							>
 								<m.div
 									animate={{
+										// @ts-ignore
 										y: transformY.transformvalue[transformPhone],
 									}}
 									className="relative m-auto"
@@ -94,6 +95,7 @@ export default function Contact() {
 							>
 								<m.div
 									animate={{
+										// @ts-ignore
 										y: transformY.transformvalue[transformEmail],
 									}}
 									className="relative m-auto"

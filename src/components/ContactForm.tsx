@@ -45,7 +45,6 @@ export default function ContactForm() {
 					/>
 					<textarea
 						className="px-1 font-display  h-36 outline-none border border-[#c4c4c4] bg-transparent rounded-lg text-black"
-						type="text"
 						name="message"
 						placeholder="Your message..."
 						required

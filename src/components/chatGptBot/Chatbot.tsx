@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { BiSend } from "react-icons/bi";
 import RecievedMsg from "./RecievedMsg";
 import SentMsg from "./SentMsg";
-import ChatBox from "./ChatBox";
 import { IoMdRadioButtonOn } from "react-icons/io";
 import { motion as m, spring } from "framer-motion";
-import { render } from "react-dom";
 
 function uuidv4() {
-	return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-		(
-			c ^
-			(crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-		).toString(16),
-	);
+	return parseInt(
+		// rome-ignore lint/suspicious/noExplicitAny: <explanation>
+		([1e7] as any) + // cast the array to 'any' to bypass TypeScript type checking
+			-1e3 +
+			-4e3 +
+			-8e3 +
+			-1e11,
+		10, // specify the base of the number system to use
+	).toString(16);
 }
 
-
-export default function Chatbot(props) {
+export default function Chatbot() {
 	const [apiResponse, setApiResponse] = useState(false);
 	const [chatOpen, setChatOpen] = useState(false);
 
@@ -44,7 +44,7 @@ export default function Chatbot(props) {
 		fetchData();
 	}, []);
 
-	const [inputVal, setInputVal] = useState();
+	const [inputVal, setInputVal] = useState("");
 	const [resMessage, setResMessage] = useState();
 	const [resArr, setResArr] = useState([]);
 	const [sentArr, setSentArr] = useState([]);
@@ -70,8 +70,10 @@ export default function Chatbot(props) {
 
 	const lastMsg = useRef(null);
 
-	const executeScroll = () =>
-		lastMsg.current.scrollIntoView({ behavior: "smooth" });
+	const executeScroll = () => {
+		// @ts-ignore
+		return lastMsg.current.scrollIntoView({ behavior: "smooth" });
+	};
 
 	useEffect(() => {
 		if (lastMsg.current !== null) {
@@ -80,14 +82,16 @@ export default function Chatbot(props) {
 		}
 	}, [sentArr, resArr]);
 
-	function handleChange(e) {
+	// rome-ignore lint/suspicious/noExplicitAny: <explanation>
+	function handleChange(e: any) {
 		setInputVal(e.target.value);
 	}
 
-	function handleAdd(inputVal) {
+	function handleAdd(inputVal: string) {
 		setInputVal("");
 
 		const newSentArr = [...sentArr];
+		// @ts-ignore
 		newSentArr.push(inputVal);
 		setSentArr(newSentArr);
 		(async () => {
@@ -101,13 +105,14 @@ export default function Chatbot(props) {
 				});
 				const data = await res.json();
 				const message = data.resp.replace(/"/g, "");
+				// @ts-ignore
 				setResArr([...resArr, message]);
 				console.log(resMessage);
 			} catch (error) {
 				console.log(error);
 				setApiResponse(false);
-				setSentArr([])
-				setResArr([])
+				setSentArr([]);
+				setResArr([]);
 				setInputVal("");
 			}
 		})();
@@ -213,16 +218,18 @@ export default function Chatbot(props) {
 						className=" bg-transparent text-gray-700 outline-none px-3 w-[90%] h-full"
 						placeholder={apiResponse ? "Caveman, should I hire Furkan?" : ""}
 					/>
-					{apiResponse && <BiSend
-						size={"1.4rem"}
-						color={"#EA3656"}
-						onClick={() => {
-							{
-								inputVal && apiResponse ? handleAdd(inputVal) : "";
-							}
-						}}
-						className="absolute top-2/4 -translate-y-2/4 right-3 cursor-pointer text-xl text-gray-500"
-					/>}
+					{apiResponse && (
+						<BiSend
+							size={"1.4rem"}
+							color={"#EA3656"}
+							onClick={() => {
+								{
+									inputVal && apiResponse ? handleAdd(inputVal) : "";
+								}
+							}}
+							className="absolute top-2/4 -translate-y-2/4 right-3 cursor-pointer text-xl text-gray-500"
+						/>
+					)}
 				</div>
 			</div>
 		</m.div>
