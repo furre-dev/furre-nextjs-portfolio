@@ -30,16 +30,16 @@ export default function RootLayout({
 }: { children: React.ReactNode }) {
 	return (
 		<html lang="en" className={`${outfitFont.variable} ${latoFont.variable}`}>
-			<body className={"flex flex-col mx-auto"}>
-				<div className="app w-[80%] mx-auto">
+			<body className={"flex flex-col"}>
+				<main className="app w-[80%] mx-auto">
 					<Navbar />
 					{typeof window === "undefined" ? (
-						<div>{children}</div>
+						<>{children}</>
 					) : (
 						<AnimatePresence exitBeforeEnter>{children}</AnimatePresence>
 					)}
 					<Chatbot />
-				</div>
+				</main>
 			</body>
 		</html>
 	);
