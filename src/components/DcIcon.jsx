@@ -1,10 +1,10 @@
 import { SiDiscord } from "react-icons/si";
+import { memo } from "react";
 
-export default function DcIcon(props) {
-	const open = props.open;
-	const close = props.close;
+const DcIcon = (props) => {
 	const color = props.status;
-	/* red: #b91c1c green: #16a34a*/
+	const open = props.open;
+  const close = props.close;
 
 	const colors = {
 		offline: "#a1a1aa",
@@ -15,12 +15,22 @@ export default function DcIcon(props) {
 
 	return (
 		<div className="bg-[#00000020] p-[.4rem] rounded-lg shadow-2xl">
-			<SiDiscord
+			{color ? <SiDiscord
 				size="1.3rem"
 				color={colors[color]}
 				onMouseEnter={open}
-				onMouseLeave={close}
+				 onMouseLeave={close}
 			/>
+		:
+		<SiDiscord
+				size="1.3rem"
+				color={colors["offline"]}
+				onMouseEnter={open}
+				 onMouseLeave={close}
+			/>
+		}
 		</div>
 	);
-}
+};
+
+export default memo(DcIcon);

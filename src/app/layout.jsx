@@ -1,18 +1,18 @@
-"use client";
-
 import Head from "next/head";
 import "../styles/globals.css";
+
 import { Outfit, Lato } from "next/font/google";
+
 import Navbar from "@/components/Navbar";
 import Chatbot from "@/components/chatGptBot/Chatbot";
+
 import { AnimatePresence } from "framer-motion";
-import { useRouter } from "next/router";
 
 const outfitFont = Outfit({
 	variable: "--display-font",
 	display: "swap",
 	subsets: ["latin"],
-	weight: ["100", "300", "400", "700", "900"],
+	weight: ["100", "300", "400","500" , "700", "900"],
 });
 
 const latoFont = Lato({
@@ -27,17 +27,13 @@ export const metadata = {
 	description: "Welcome to Furkan's Next.js portfolio",
 };
 
-
 export default function RootLayout({
 	// Layouts must accept a children prop.
 	// This will be populated with nested layouts or pages
 	children,
 }) {
 	return (
-		<html
-			lang="en"
-			className={`${outfitFont.variable} ${latoFont.variable}`}
-		>
+		<html lang="en" className={`${outfitFont.variable} ${latoFont.variable}`}>
 			<Head>
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,11 +54,16 @@ export default function RootLayout({
 					rel="stylesheet"
 				/>
 			</Head>
-			<body
-				className={"flex flex-col mx-auto"}
-			>
-				<Chatbot />
-				<AnimatePresence mode='wait'>{children}</AnimatePresence>
+			<body className={"flex flex-col mx-auto"}>
+				<div className="app w-[80%] mx-auto">
+					<Navbar />
+					{typeof window === "undefined" ? (
+						<div>{children}</div>
+					) : (
+						<AnimatePresence exitBeforeEnter>{children}</AnimatePresence>
+					)}
+					<Chatbot />
+				</div>
 			</body>
 		</html>
 	);

@@ -1,165 +1,127 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react";
-import { IoLogoDiscord } from "react-icons/io5";
-import DcTooltip from "./DcTooltip";
-import DcIcon from "./DcIcon";
+import { useState, useEffect, useMemo } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import DiscordStatus from "./DiscordStatus";
 
-import { useLanyard } from "react-use-lanyard";
+function Navbar() {
+	const pathname = usePathname();
 
-function Navbar({variant = "primary"}) {
-	const [discordStatus, setDiscordStatus] = useState("offline");
-	const [discordName, setDiscordName] = useState("");
-
-	const { loading, status /*, websocket */ } = useLanyard({
-		userId: "232921014068183050",
-		socket: true,
-	});
+	const [selectedColorScheme, setSelectedColorScheme] = useState("primary");
 
 	useEffect(() => {
-		if (!loading) {
-			if (status) {
-				console.log("status is", status);
-				const text = JSON.stringify(status, null, 4);
-				const obj = JSON.parse(text);
-				const dcStatus = obj.discord_status;
-				setDiscordStatus(dcStatus);
-				setDiscordName(
-					`${obj.discord_user.username}#${obj.discord_user.discriminator}`,
-				);
-			} else {
-				console.error("status is undefined");
-			}
+		switch (pathname) {
+			case "/about":
+				setSelectedColorScheme("secondary");
+				break;
+			case "/portfolio":
+				setSelectedColorScheme("tertiary");
+				break;
+			case "/contact":
+				setSelectedColorScheme("tertiary");
+				break;
+			default:
+				setSelectedColorScheme("primary");
 		}
-	}, [status]);
+	}, [pathname]);
 
-
-	const props = {
-		colors: {
-			/* Color Palette!
-      Red: #EA3656,
-      Gray: #454555
-      White: #D9F0EE
-      */
-			"primary": {
+	const colors = useMemo(() => {
+		/* Color Palette!
+    Red: #EA3656,
+    Gray: #454555
+    White: #D9F0EE
+    */
+		return {
+			primary: {
 				first: "#D9F0EE",
 				second: "#EA3656",
 				third: "#454555",
 				hover: "#FFFFFF",
 			},
-			"secondary": {
+			secondary: {
 				first: "#D9F0EE",
 				second: "#F1F8F7",
 				third: "#F1F8F7",
 				hover: "#454555",
 			},
-			"tertiary": {
+			tertiary: {
 				first: "#D9F0EE",
 				second: "#EA3656",
 				third: "#F1F8F7",
 				hover: "#454555",
 			},
-		
-		},
-	};
-
-	//Makes so that tooltip doesnt dissapear if user moves mouse from icon to tooltip
-	const [tooltip, setTooltip] = useState(false);
-	const [hoverIcon, setHoverIcon] = useState(false);
-	const [hoverTooltip, setHoverTooltip] = useState(false);
-
-	useEffect(() => {
-		if (!(hoverIcon || hoverTooltip)) {
-			setTooltip(false);
-		} else {
-			setTooltip(true);
-		}
-	}, [hoverIcon, hoverTooltip]);
+		};
+	}, []);
 
 	return (
-		<nav className={"sticky w-full lg:max-w-7xl px-4 mx-auto top-0 z-40 pointer-events-none"}>
+		<nav
+			className={
+				"sticky w-full px-4 mx-auto top-0 z-40 pointer-events-none"
+			}
+		>
 			<div className="absolute h-full w-screen -z-10"> </div>
-			{/* {router.asPath && ( */}
-				<div className="flex justify-center lg:justify-between items-center py-5  2xl:py-10">
-					<Link
-						href={"/"}
-						style={{ color: props.colors[variant].third }}
+
+			<div className="flex justify-center lg:justify-between items-center py-5  2xl:py-10">
+				<Link
+					href={"/"}
+					style={{ color: colors[selectedColorScheme].third }}
+					className={
+						"logoLeft pointer-events-auto font-display font-black text-xl md:text-2xl  2xl:text-2xl"
+					}
+				>
+					FURK
+					<span style={{ color: colors[selectedColorScheme].second }}>A</span>
+					N.
+				</Link>
+				<ul className="space-x-16 hidden lg:flex items-center text-black">
+					<li
+						style={{ color: colors[selectedColorScheme].third }}
 						className={
-							"logoLeft pointer-events-auto font-display font-black text-xl md:text-2xl  2xl:text-2xl"
+							"navText  items-center pointer-events-auto font-display font-medium text-lg lg:text-base"
 						}
 					>
-						FURK
-						<span style={{ color: props.colors[variant].second }}>
-							A
-						</span>
-						N.
-					</Link>
-					<ul className="space-x-16 hidden lg:flex items-center text-black">
+						<Link href={"/"}>Home</Link>
+					</li>
+					<li
+						style={{ color: colors[selectedColorScheme].third }}
+						className={
+							"navText  pointer-events-auto font-display font-medium text-lg lg:text-base"
+						}
+					>
+						<Link href={"/about"}>About</Link>
+					</li>
+					<li
+						style={{ color: colors[selectedColorScheme].third }}
+						className={
+							"navText pointer-events-auto font-display font-medium text-lg lg:text-base"
+						}
+					>
+						<Link href={"/portfolio"}>Portfolio</Link>
+					</li>
+					<li
+						style={{ color: colors[selectedColorScheme].third }}
+						className={
+							"navText pointer-events-auto font-display font-medium text-lg lg:text-base"
+						}
+					>
+						<Link href={"/contact"}>Contact</Link>
+					</li>
+					<div className="flex items-center space-x-8">
 						<li
-							style={{ color: props.colors[variant].third }}
+							style={{ color: colors[selectedColorScheme].third }}
 							className={
-								"navText  items-center pointer-events-auto font-display font-bold text-lg lg:text-base"
+								"navText pointer-events-auto font-display font-medium text-lg lg:text-base"
 							}
 						>
-							<Link href={"/"}>Home</Link>
+							<a href="https://github.com/furreabay" target={"_blank"}>
+								Github
+							</a>
 						</li>
-						<li
-							style={{ color: props.colors[variant].third }}
-							className={
-								"navText  pointer-events-auto font-display font-bold text-lg lg:text-base"
-							}
-						>
-							<Link href={"/about"}>About</Link>
-						</li>
-						<li
-							style={{ color: props.colors[variant].third }}
-							className={
-								"navText pointer-events-auto font-display font-bold text-lg lg:text-base"
-							}
-						>
-							<Link href={"/portfolio"}>Portfolio</Link>
-						</li>
-						<li
-							style={{ color: props.colors[variant].third }}
-							className={
-								"navText pointer-events-auto font-display font-bold text-lg lg:text-base"
-							}
-						>
-							<Link href={"/contact"}>Contact</Link>
-						</li>
-						<div className="flex items-center space-x-8">
-							<li
-								style={{ color: props.colors[variant].third }}
-								className={
-									"navText pointer-events-auto font-display font-bold text-lg lg:text-base"
-								}
-							>
-								<a href="https://github.com/furreabay" target={"_blank"}>
-									Github
-								</a>
-							</li>
-							<li
-								className={`pointer-events-auto relative cursor-pointer text-lg lg:text-base text-${discordStatus}-600`}
-							>
-								<DcIcon
-									open={() => setHoverIcon(true)}
-									close={() => setHoverIcon(false)}
-									status={discordStatus}
-								/>
-								{/* <IoLogoDiscord size="1.5rem" onMouseEnter={() => setTooltip(true)} onMouseLeave={() => setTooltip(false)} /> */}
-								<DcTooltip
-									username={discordName}
-									open={() => setHoverTooltip(true)}
-									close={() => setHoverTooltip(false)}
-									func={tooltip}
-								/>
-							</li>
-						</div>
-					</ul>
-				</div>
-			{/* )} */}
+						<DiscordStatus />
+					</div>
+				</ul>
+			</div>
 		</nav>
 	);
 }

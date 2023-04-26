@@ -1,16 +1,15 @@
 import { motion as m, AnimatePresence, spring } from "framer-motion";
 import { useState, useEffect } from "react";
+import { memo } from "react";
 
-export default function DcTooltip(props) {
+const DcTooltip = (props) => {
 	const func = props.func;
 	const open = props.open;
 	const close = props.close;
 	const username = props.username;
-
 	const dcNick = username;
 
 	const [usernameToolTip, setUsernameToolTip] = useState(false);
-
 	const [mousePos, setMousePos] = useState({});
 
 	const handleMouseMove = (window) => {
@@ -19,7 +18,7 @@ export default function DcTooltip(props) {
 	};
 
 	return (
-		<AnimatePresence>
+		<>
 			{func ? (
 				<m.div
 					initial={{ opacity: 0 }}
@@ -39,7 +38,7 @@ export default function DcTooltip(props) {
 					</p>
 					<div className="flex flex-col text-sm mt-2 font-display">
 						<div className="relative">
-							<m.p
+							<p
 								whileTap={{ scale: 0.9 }}
 								className="mb-2 text-lg cursor-pointer"
 								onMouseEnter={() => {
@@ -54,7 +53,7 @@ export default function DcTooltip(props) {
 								<span title="Click to copy!" className="text-[#5460E6]">
 									{dcNick}
 								</span>
-							</m.p>
+							</p>
 							{/* <p className="absolute -top-2 left-2/4 -translate-x-2/4 text-xs">Click to copy!</p> */}
 						</div>
 						<p className="text-[#454555]">
@@ -71,6 +70,8 @@ export default function DcTooltip(props) {
 			) : (
 				""
 			)}
-		</AnimatePresence>
+		</>
 	);
-}
+};
+
+export default memo(DcTooltip);
