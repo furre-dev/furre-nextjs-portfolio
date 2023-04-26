@@ -3,7 +3,6 @@
 ## Overview
 Welcome to the Furre Portfolio project! This Next.js 13 application is built with TypeScript, utilizes app routes. It features OpenAI chatbot prompt engineering, semantic HTML, SEO optimization, and performance optimization to ensure good Core Web Vitals and Lighthouse scores.
 
-<br/>
 
 ## 🚀 Getting Started
 Follow these steps to set up the Furre Portfolio project locally:
@@ -40,14 +39,12 @@ npm run dev
 
 This will start the Next.js development server at http://localhost:3000.
 
-<br/>
 
 ## ✅ Linting and Type Checking
 This project employs lint-staged and simple-git-hooks to enforce code formatting and type checking before committing or pushing to the repository.
 
 `*.{js,jsx,ts,tsx}` files are automatically formatted with Rome when you commit your changes. Also, `npm run type-check` is executed before pushing to the repository.
 
-<br/>
 
 ## 📜 Available Scripts
 In the project directory, you can run the following commands:
@@ -57,30 +54,28 @@ In the project directory, you can run the following commands:
 npm run dev
 ```
 Runs the app in development mode.  
-<br/>
+
 ### Production Mode
 ```
 npm start
 ```
 Starts the app in production mode.  
-<br/>
+
 ### Linting
 ```
 npm run lint
 ```
 Lints the project files.  
-<br/>
+
 ### Type Checking
 ```
 npm run type-check
 ```
 Checks the project's TypeScript types.  
 
-<br/>
 
 ---
 
-<br/>
 
 
 ### Thank you for checking out the Furre Portfolio project!
