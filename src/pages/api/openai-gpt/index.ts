@@ -63,8 +63,6 @@ export default async function handler(
 						],
 					});
 
-					console.log("response.data", response.data.choices[0]);
-
 					return res.status(200).json({
 						resp: response.data.choices[0].message?.content,
 					});
@@ -81,8 +79,7 @@ export default async function handler(
 		}
 		// rome-ignore lint/suspicious/noExplicitAny: <explanation>
 	} catch (error: any) {
-		// console.error(error);
-		console.log("error", error.response);
+		console.error(error);
 		if (error.response?.status) {
 			return res.status(error.response.status).json(error.response.statusText);
 		} else {
