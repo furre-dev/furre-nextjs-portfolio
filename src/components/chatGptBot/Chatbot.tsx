@@ -101,8 +101,9 @@ export default function Chatbot() {
 					headers: {
 						"Content-type": "application/json",
 					},
-					body: JSON.stringify({ inputVal }),
+					body: JSON.stringify({ messages: newSentArr }),
 				});
+
 				const data = await res.json();
 				const message = data.resp.replace(/"/g, "");
 				// @ts-ignore
