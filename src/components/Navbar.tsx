@@ -158,7 +158,7 @@ function Navbar() {
 								"navText pointer-events-auto font-display font-medium text-lg lg:text-base"
 							}
 						>
-							<a href="https://github.com/furreabay" target={"_blank"}>
+							<a href="https://github.com/furre-dev" target={"_blank"}>
 								Github
 							</a>
 						</li>

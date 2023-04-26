@@ -18,7 +18,7 @@ Welcome to the Furre Portfolio project! This is a Next.js 13 application that ut
 To get started with the project, you'll need to clone this repository and install the necessary dependencies:
 
 ```
-git clone https://github.com/furreabay/furre-portfolio.git
+git clone https://github.com/furre-dev/furre-nextjs-portfolio.git
 cd furre-portfolio
 npm install
 ```
@@ -35,7 +35,7 @@ This will start the Next.js development server at http://localhost:3000.
 ## Linting
 This project includes lint-staged and simple-git-hooks to enforce code formatting and type checking before committing or pushing to the repository.
 
-The *.{js,jsx,ts,tsx} files are automatically formatted with rome when you commit your changes. Additionally, npm run type-check will run before pushing to the repository.
+The `*.{js,jsx,ts,tsx}` files are automatically formatted with rome when you commit your changes. Additionally, `npm run type-check` will run before pushing to the repository.
 
 
 ## Available Scripts

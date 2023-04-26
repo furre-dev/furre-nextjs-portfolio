@@ -71,7 +71,7 @@ export default function Portfolio() {
 								</m.p>
 								<m.a
 									target={"_blank"}
-									href="https://github.com/furreabay?tab=repositories"
+									href="https://github.com/furre-dev?tab=repositories"
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
 									transition={{

@@ -127,7 +127,7 @@ export default function Contact() {
 								transition={{ duration: 0.4, type: "spring", bounce: 0.5 }}
 								target="_blank"
 								rel="noreferrer"
-								href="https://github.com/furreabay"
+								href="https://github.com/furre-dev"
 								className="flex iconShadow bg-[#ea9fa02e] w-10 aspect-square"
 								type="button"
 							>
