@@ -1,6 +1,6 @@
 {
-  "name": "furre-portfolio",
-  "version": "0.8.0",
+  "name": "furre-nextjs-portfolio",
+  "version": "0.9.0",
   "private": true,
   "scripts": {
     "postinstall": "npx simple-git-hooks",
