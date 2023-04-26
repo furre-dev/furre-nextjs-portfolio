@@ -7,10 +7,6 @@ import { IoMailOutline } from "react-icons/io5";
 import { motion as m } from "framer-motion";
 import ContactForm from "src/components/ContactForm";
 
-export const metadata = {
-	title: "Furkan - Portfolio - Contact",
-};
-
 export default function Contact() {
 	const [transformPhone, setTransformPhone] = useState(false);
 	const [transformEmail, setTransformEmail] = useState(false);

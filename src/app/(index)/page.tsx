@@ -4,10 +4,6 @@ import { motion as m } from "framer-motion";
 import Link from "next/link";
 import { useEffect } from "react";
 
-export const metadata = {
-	title: "Furkan - Portfolio - Home",
-};
-
 export default function Home() {
 	useEffect(() => {
 		document.body.style.background = "#F1F8F7";
