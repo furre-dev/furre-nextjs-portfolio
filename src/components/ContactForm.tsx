@@ -12,7 +12,7 @@ export default function ContactForm() {
 				type: "spring",
 				bounce: 0.4,
 			}}
-			className="py-1 2xl:h-[30rem] lg:h-[22rem] lg:w-[20rem] 2xl:w-[25rem] rounded-t-3xl fixed bottom-0 left-2/4 -translate-x-2/4 bg-[#F1F8F7] fullShadow"
+			className="py-1 pb-14 md:pb-0 2xl:h-[30rem] lg:h-[22rem] lg:w-[20rem] 2xl:w-[25rem] rounded-t-3xl fixed bottom-0 left-2/4 -translate-x-2/4 bg-[#F1F8F7] fullShadow"
 		>
 			<div className="h-1/6 flex justify-center items-center">
 				<h2 className="font-display text-xl 2xl:text-2xl">Contact me!</h2>

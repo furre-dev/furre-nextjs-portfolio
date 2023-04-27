@@ -28,7 +28,7 @@ export default function Contact() {
 		<>
 			<main className="w-full lg:max-w-7xl px-4 mx-auto">
 				<div className="flex flex-col items-center justify-center 2xl:pt-10">
-					<div className="space-y-8 flex flex-col">
+					<div className="md:space-y-8 space-y-2 sm:space-y-4 flex flex-col">
 						<m.h2
 							initial={{ x: "1600px" }}
 							animate={{ x: "0px" }}
@@ -38,14 +38,14 @@ export default function Contact() {
 								type: "spring",
 								bounce: 0.4,
 							}}
-							className="relative font-display font-black text-8xl text-[#F1F8F7]"
+							className="relative font-display font-black text-3xl mx-auto sm:text-5xl lg:text-8xl text-[#F1F8F7]"
 						>
 							Furkan Abay
-							<span className="absolute top-[6px]  left-0 text-[#EA3656] -z-10 select-none">
+							<span className="absolute top-1 lg:top-[6px]  left-0 text-[#EA3656] -z-10 select-none">
 								Furkan Abay
 							</span>
 						</m.h2>
-						<div className="flex text-[1.3rem] text-[#F1F8F7] justify-around">
+						<div className="flex flex-col sm:flex-row space-y-3 sm:space-x-10 sm:space-y-0 text-[1.3rem] text-[#F1F8F7] justify-around items-center ">
 							{/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 							<m.div
 								initial={{ x: "-1500px" }}
@@ -109,7 +109,7 @@ export default function Contact() {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ duration: 1, delay: 1 }}
-							className="text-2xl text-[#F1F8F7] flex justify-around px-10"
+							className="text-2xl text-[#F1F8F7] flex space-x-4 md:space-x-0 justify-around px-10"
 						>
 							<m.a
 								whileHover={{ scale: 1.2, rotate: "5deg" }}
