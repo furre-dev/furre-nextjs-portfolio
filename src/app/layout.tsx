@@ -31,7 +31,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={`${outfitFont.variable} ${latoFont.variable}`}>
 			<body className={"flex flex-col w-screen h-screen"}>
-				<div className="app w-[80%] mx-auto">
+				<div className="app w-[80%] mx-auto overflow-y-hidden">
 					<Navbar />
 					{typeof window === "undefined" ? (
 						<>{children}</>
