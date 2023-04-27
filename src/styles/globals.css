@@ -22,8 +22,6 @@ html {
 }
 
 body {
-  overflow-x: hidden;
-  overflow-y: hidden;
   position: relative;
   background: "#F1F8F7";
 

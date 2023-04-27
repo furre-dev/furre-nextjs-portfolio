@@ -14,11 +14,10 @@ export default function Portfolio() {
 
 	useEffect(() => {
 		document.body.style.background = "#454555";
-		document.body.style.overflowY = "hidden";
 	}, []);
 
 	return (
-		<main>
+		<main className="overflow-y-hidden">
 			<div
 				ref={scrollContainerRef}
 				className="absolute top-0 left-0 flex w-screen h-screen overflow-x-scroll overflow-y-hidden"

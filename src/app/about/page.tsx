@@ -10,7 +10,7 @@ export default function About() {
 	}, []);
 
 	return (
-		<main className="w-full lg:max-w-7xl pt-8 px-4 mx-auto">
+		<main className="w-full lg:max-w-7xl pt-8 px-4 mx-auto overflow-scroll">
 			<div className="flex justify-center items-center h-4/5">
 				<div className="2xl:my-24 lg:my-0 w-full flex md:flex-row md:pb-0 pb-24 flex-col">
 					<div className="left-side flex flex-col md:justify-around md:items-start justify-center items-center">
