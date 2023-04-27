@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion as m } from "framer-motion";
 import { TfiMouse } from "react-icons/tfi";
 import { AiOutlineArrowDown } from "react-icons/ai";
+import { TfiHandPointRight } from "react-icons/tfi";
 import ProjectDiv from "src/components/ProjectDiv";
 import { useHorizontalScroll } from "src/hooks/useHorizontalScroll";
 
@@ -28,10 +29,19 @@ export default function Portfolio() {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ delay: 1, duration: 0.5 }}
-							className="mouseFloat hidden lg:flex space-y-1  flex-col items-center absolute top-2/4 -translate-y-2/4 right-10"
+							className="mouseFloat flex space-y-1  flex-col items-center absolute top-2/4 -translate-y-2/4 md:right-10 right-1"
 						>
-							<TfiMouse color="white" size="2rem" />
-							<AiOutlineArrowDown color="white" size="1rem" />
+							<TfiMouse className="lg:block hidden" color="white" size="2rem" />
+							<TfiHandPointRight
+								className="lg:hidden"
+								color="white"
+								size="2rem"
+							/>
+							<AiOutlineArrowDown
+								className="lg:block hidden"
+								color="white"
+								size="1rem"
+							/>
 						</m.div>
 						<div className="flex flex-col items-center space-y-10 h-4/6">
 							<m.h1
