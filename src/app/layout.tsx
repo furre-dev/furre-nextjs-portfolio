@@ -30,8 +30,8 @@ export default function RootLayout({
 }: { children: React.ReactNode }) {
 	return (
 		<html lang="en" className={`${outfitFont.variable} ${latoFont.variable}`}>
-			<body className={"flex flex-col w-screen h-screen"}>
-				<div className="app md:w-[80%] h-screen mx-auto overflow-hidden">
+			<body className={"flex flex-col w-screen h-screen overflow-x-hidden"}>
+				<div className="app md:w-[80%] h-screen mx-auto">
 					<Navbar />
 					{typeof window === "undefined" ? (
 						<>{children}</>

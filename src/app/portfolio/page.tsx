@@ -7,6 +7,7 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import { TfiHandPointRight } from "react-icons/tfi";
 import ProjectDiv from "src/components/ProjectDiv";
 import { useHorizontalScroll } from "src/hooks/useHorizontalScroll";
+import Scrollbar from "smooth-scrollbar";
 
 export default function Portfolio() {
 	const scrollContainerRef = useRef(null);
@@ -20,7 +21,7 @@ export default function Portfolio() {
 		<main className="overflow-y-hidden">
 			<div
 				ref={scrollContainerRef}
-				className="absolute top-0 left-0 flex w-screen h-screen overflow-x-scroll overflow-y-hidden"
+				className="scroller absolute top-0 left-0 flex w-screen h-screen overflow-x-scroll overflow-y-hidden"
 			>
 				<div className="flex flex-row">
 					<div className="w-screen h-screen relative flex items-center justify-center snap-start flex-none">

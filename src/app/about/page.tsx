@@ -2,13 +2,15 @@
 
 import { useEffect } from "react";
 import { motion as m } from "framer-motion";
+import Link, { LinkProps } from "next/link";
 
 export default function About() {
 	useEffect(() => {
 		document.body.style.background = "#EA3656";
+		// rome-ignore lint/style/noNonNullAssertion: <explanation>
 		const appClass: HTMLElement = document.querySelector(".app")!;
-		appClass.style.overflowY = "auto";
-		document.body.style.overflowY = "auto";
+		appClass.style.overflowY = "visible";
+		document.body.style.overflowY = "scroll";
 	}, []);
 
 	return (
@@ -30,14 +32,16 @@ export default function About() {
 						>
 							About me.
 						</m.h1>
-						<m.button
+						<m.a
+							download
+							href="/public/CV.pdf"
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ duration: 0.5, delay: 0.6 }}
-							className="bg-[#D9F0EE] py-5 w-[20rem] rounded-full text-[#EA3656] font-display font-black border-2 mt-5 lg:mt-10 hover:bg-transparent hover:text-[#D9F0EE] hover:scale-[1.02] hover:shadow-md transition-all duration-200"
+							className="bg-[#D9F0EE] py-5 w-[20rem] flex justify-center rounded-full text-[#EA3656] font-display font-black border-2 mt-5 lg:mt-10 hover:bg-transparent hover:text-[#D9F0EE] hover:scale-[1.02] hover:shadow-md transition-all duration-200"
 						>
 							Download CV!
-						</m.button>
+						</m.a>
 					</div>
 					<div className="right-side  w-full flex  items-center font-display font-light md:pl-10 md:justify-between md:mt-0 justify-center mt-10">
 						<m.div
