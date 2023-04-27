@@ -29,13 +29,13 @@ export default function Portfolio() {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ delay: 1, duration: 0.5 }}
-							className="mouseFloat flex space-y-1  flex-col items-center absolute top-2/4 -translate-y-2/4 md:right-10 right-1"
+							className="mouseFloat flex space-y-1  flex-col items-center absolute top-2/4 -translate-y-2/4 md:right-10 right-2"
 						>
 							<TfiMouse className="lg:block hidden" color="white" size="2rem" />
 							<TfiHandPointRight
 								className="lg:hidden"
 								color="white"
-								size="2rem"
+								size="1.5rem"
 							/>
 							<AiOutlineArrowDown
 								className="lg:block hidden"
