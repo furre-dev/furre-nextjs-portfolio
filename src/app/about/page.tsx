@@ -6,6 +6,8 @@ import { motion as m } from "framer-motion";
 export default function About() {
 	useEffect(() => {
 		document.body.style.background = "#EA3656";
+		const appClass: HTMLElement = document.querySelector(".app")!;
+		appClass.style.overflowY = "auto";
 		document.body.style.overflowY = "auto";
 	}, []);
 

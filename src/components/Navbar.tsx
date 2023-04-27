@@ -62,7 +62,7 @@ function Navbar() {
 		>
 			<div className="absolute h-full w-screen -z-10"> </div>
 
-			<div className="flex justify-center lg:justify-between items-center py-5  2xl:py-10">
+			<div className="flex justify-center lg:justify-between items-center py-3  2xl:py-10">
 				<Link
 					href={"/"}
 					style={{ color: colors[selectedColorScheme].third }}
