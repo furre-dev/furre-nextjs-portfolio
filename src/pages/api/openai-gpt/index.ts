@@ -27,6 +27,7 @@ export default async function handler(
 
 				if (messages.length < 240) {
 					const response = await openai.createChatCompletion({
+						max_tokens: 140,
 						model: "gpt-3.5-turbo",
 						messages: [
 							{
