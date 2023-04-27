@@ -43,9 +43,11 @@ export default function Portfolio() {
 									type: "spring",
 									bounce: 0.4,
 								}}
-								className="text-[#F1F8F7] font-display font-black max-w-[40rem] relative text-center
+								className="text-[#F1F8F7] font-display font-black lg:max-w-[40rem] relative text-center
 						2xl:text-8xl
-						lg:text-8xl"
+						lg:text-8xl
+						md:text-5xl max-w-[30rem]
+						text-3xl max-w-[10rem]"
 							>
 								Portfolio & Projects!
 								<span className="text-[#EA3656] -z-40 absolute top-[2px] left-0 lg:top-[5px] lg:left-[7px] w-full">
@@ -61,8 +63,9 @@ export default function Portfolio() {
 									type: "spring",
 									bounce: 0.4,
 								}}
-								className="text-[#c5c5c5] font-light font-body max-w-[50rem] text-center
-						lg:text-md"
+								className="text-[#c5c5c5] font-light font-body lg:max-w-[50rem] text-center
+						lg:text-md
+						max-w-[80%]"
 							>
 								Get ready to geek out! I'm a web wizard with a magic touch for
 								crafting stunning, interactive experiences that leave users

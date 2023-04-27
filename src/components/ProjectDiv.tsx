@@ -4,7 +4,7 @@ export default function ProjectDiv({
 	text,
 }: { src: string; title: string; text: string }) {
 	return (
-		<div className="w-screen relative h-screen flex justify-center items-center flex-none snap-start overflow-hidden">
+		<div className="w-screen relative h-screen flex justify-center lg:items-center flex-none snap-start overflow-hidden">
 			<div
 				className="w-[80%] mt-24  relative flex  
 			lg:justify-end lg:items-center lg:h-max
@@ -21,10 +21,10 @@ export default function ProjectDiv({
 					lg:max-w-[30rem]"
 					>
 						<h1
-							className="font-display font-black text-[#F1F8F7] relative
+							className="font-display text-center lg:text-right font-black text-[#F1F8F7] relative
 					2xl:text-7xl
 					lg:text-5xl
-					text-6xl"
+					text-4xl"
 						>
 							{title}
 							<span
@@ -63,8 +63,8 @@ export default function ProjectDiv({
 						2xl:-top-72 2xl:w-[65rem] 2xl:-left-56
 						lg:-top-52 lg:w-[45rem] lg:-left-36 lg:-translate-x-0
 						md:top-40 md:left-2/4 md:-translate-x-2/4
-						sm:top-56
-						top-72 w-full"
+						sm:top-44
+						top-60 w-full"
 						alt="Macbook mockup with preview of project"
 						src={src}
 					/>

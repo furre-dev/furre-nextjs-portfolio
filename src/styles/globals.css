@@ -17,6 +17,10 @@
   display: none;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   overflow-x: hidden;
   overflow-y: hidden;
