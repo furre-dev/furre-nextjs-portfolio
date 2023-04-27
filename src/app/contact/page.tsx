@@ -116,7 +116,7 @@ export default function Contact() {
 								transition={{ duration: 0.4, type: "spring", bounce: 0.5 }}
 								target="_blank"
 								rel="noreferrer"
-								href="https://www.linkedin.com/in/furkan-abay-04b33224b/"
+								href="https://www.linkedin.com/in/furre-dev"
 								className="flex iconShadow bg-[#ea9fa02e] w-10 aspect-square"
 								type="button"
 							>
