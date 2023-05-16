@@ -1,16 +1,56 @@
-import { GrClose } from "react-icons/gr";
-import { TiThMenu } from "react-icons/ti";
-export default function MobileNavbar() {
+import Link from "next/link";
+import { IoCloseOutline } from "react-icons/io5";
+
+export default function MobileNavbar({
+	closeNavBar,
+}: { closeNavBar: React.MouseEventHandler<HTMLElement> }) {
 	return (
-		<div className="lg:hidden h-screen w-2/4 bg-black absolute top-0 right-0 z-[100]">
-			<TiThMenu
-				className="w-[2rem] h-[2rem] sm:w-[3rem] sm:h-[3rem] m-3 ml-auto"
-				color="white"
-			/>
-			<GrClose
-				className="w-[2rem] h-[2rem] sm:w-[3rem] sm:h-[3rem] m-3 ml-auto"
-				color="white"
-			/>
+		<div className="mobileNavbarDiv lg:hidden absolute pointer-events-auto  max-w-2/4 w-40 h-screen top-0 right-0">
+			<button className="ml-auto m-3 block" onClick={closeNavBar}>
+				<IoCloseOutline size={"2rem"} />
+			</button>
+			<ul className="px-7 text-right space-y-5">
+				<li>
+					<Link
+						href={"/"}
+						className="font-display text-[#EA3656] font-medium text-3xl"
+					>
+						Home
+					</Link>
+				</li>
+				<li>
+					<Link
+						href={"/about"}
+						className="font-display text-[#EA3656] font-medium text-3xl"
+					>
+						About
+					</Link>
+				</li>
+				<li>
+					<Link
+						href={"/portfolio"}
+						className="font-display text-[#EA3656] font-medium text-3xl"
+					>
+						Portfolio
+					</Link>
+				</li>
+				<li>
+					<Link
+						href={"/contact"}
+						className="font-display text-[#EA3656] font-medium text-3xl"
+					>
+						Contact
+					</Link>
+				</li>
+				<li>
+					<Link
+						href={"https://github.com/furre-dev"}
+						className="font-display text-[#EA3656] font-medium text-3xl"
+					>
+						Home
+					</Link>
+				</li>
+			</ul>
 		</div>
 	);
 }

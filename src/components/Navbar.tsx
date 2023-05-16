@@ -4,6 +4,8 @@ import { useState, useEffect, useMemo } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import DiscordStatus from "./DiscordStatus";
+import MobileNavbar from "./MobileNavbar";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 function Navbar() {
 	const pathname = usePathname();
@@ -11,6 +13,7 @@ function Navbar() {
 	const [selectedColorScheme, setSelectedColorScheme] = useState<
 		"primary" | "secondary" | "tertiary"
 	>("primary");
+	const [mobileNavActive, setMobileNavActive] = useState<boolean>(true);
 
 	useEffect(() => {
 		switch (pathname) {
@@ -60,20 +63,30 @@ function Navbar() {
 		<nav
 			className={"sticky w-full px-4 mx-auto top-0 z-40 pointer-events-none"}
 		>
-			<div className="absolute h-full w-screen -z-10"> </div>
-
 			<div className="flex justify-center lg:justify-between items-center py-3  md:py-10">
 				<Link
 					href={"/"}
 					style={{ color: colors[selectedColorScheme].third }}
-					className={
-						"logoLeft pointer-events-auto font-display font-black text-xl md:text-2xl  2xl:text-2xl"
-					}
+					className={`logoLeft ${
+						!mobileNavActive ? "pointer-events-auto " : "pointer-events-none"
+					} font-display font-black text-xl md:text-2xl  2xl:text-2xl`}
 				>
 					FURK
 					<span style={{ color: colors[selectedColorScheme].second }}>A</span>
 					N.
 				</Link>
+				{mobileNavActive ? (
+					<MobileNavbar closeNavBar={() => setMobileNavActive(false)} />
+				) : (
+					<button
+						onClick={() => {
+							setMobileNavActive(true);
+						}}
+						className="absolute top-0 right-0 p-3 z-100 pointer-events-auto"
+					>
+						<RxHamburgerMenu size={"1.5rem"} />
+					</button>
+				)}
 				<ul className="space-x-16 hidden lg:flex items-center text-black">
 					{pathname !== "/" ? (
 						<li
