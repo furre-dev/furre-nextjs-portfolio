@@ -7,7 +7,6 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import { TfiHandPointRight } from "react-icons/tfi";
 import ProjectDiv from "src/components/ProjectDiv";
 import { useHorizontalScroll } from "src/hooks/useHorizontalScroll";
-import Scrollbar from "smooth-scrollbar";
 
 export default function Portfolio() {
 	const scrollContainerRef = useRef(null);
