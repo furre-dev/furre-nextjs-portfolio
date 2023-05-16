@@ -3,6 +3,7 @@ import { Outfit, Lato } from "next/font/google";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "src/components/Navbar";
 import Chatbot from "src/components/chatGptBot/Chatbot";
+import MobileNavbar from "src/components/MobileNavbar";
 
 const outfitFont = Outfit({
 	variable: "--display-font",
@@ -32,6 +33,7 @@ export default function RootLayout({
 		<html lang="en" className={`${outfitFont.variable} ${latoFont.variable}`}>
 			<body className={"flex flex-col w-screen h-screen overflow-x-hidden"}>
 				<div className="app md:w-[80%] h-screen mx-auto">
+					<MobileNavbar />
 					<Navbar />
 					{typeof window === "undefined" ? (
 						<>{children}</>
