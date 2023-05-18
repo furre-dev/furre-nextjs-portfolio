@@ -100,6 +100,7 @@ export default function MobileNavbar({
 						>
 							<Link
 								href={"https://github.com/furre-dev"}
+								target="_blank"
 								className="font-display text-[#EA3656] font-light text-3xl"
 							>
 								Github
