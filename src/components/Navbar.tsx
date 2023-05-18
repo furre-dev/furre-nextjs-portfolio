@@ -91,7 +91,7 @@ function Navbar() {
 						onClick={() => {
 							setMobileNavActive(true);
 						}}
-						className="absolute lg:hidden top-0 right-0 p-3 z-100 pointer-events-auto"
+						className="absolute lg:hidden top-0 right-0 p-3 z-100 pointer-events-auto button-style"
 					>
 						<RxHamburgerMenu size={"1.5rem"} color="#454555" />
 					</m.button>

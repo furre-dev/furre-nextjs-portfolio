@@ -37,7 +37,7 @@ export default function MobileNavbar({
 					className="bg-[#ea3657e3] rounded-l-xl lg:hidden absolute pointer-events-auto  max-w-2/4 w-52 h-screen top-0 right-0 overflow-hidden"
 				>
 					<button
-						className="ml-auto mt-2 mr-10 block"
+						className="ml-auto mt-2 mr-10 block button-style"
 						onClick={() => {
 							setIsActive(false);
 						}}

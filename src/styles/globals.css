@@ -59,12 +59,27 @@ body {
   transition: color .7s;
 }
 
-.mobileNavbarDiv {
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.37);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.2px);
-  -webkit-backdrop-filter: blur(5.2px);
+svg:active {
+  background-color: transparent;
+}
+
+button:focus {
+  outline: none;
+  /* Remove the default focus outline */
+}
+
+button:active {
+  background-color: transparent;
+  /* Set the background color to transparent in the active state */
+}
+
+.button-style {
+  -webkit-tap-highlight-color: transparent;
+  /* Disable tap highlight on iOS */
+  -webkit-touch-callout: none;
+  /* Disable the callout menu on long press on iOS */
+  user-select: none;
+  /* Disable text selection on the button */
 }
 
 .portfolioCont::-webkit-scrollbar {
