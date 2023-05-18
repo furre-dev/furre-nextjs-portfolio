@@ -1,56 +1,113 @@
 import Link from "next/link";
 import { IoCloseOutline } from "react-icons/io5";
+import { AnimatePresence, motion as m } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function MobileNavbar({
 	closeNavBar,
-}: { closeNavBar: React.MouseEventHandler<HTMLElement> }) {
+}: { closeNavBar: () => void }) {
+	const [isActive, setIsActive] = useState(true);
+
+	useEffect(() => {
+		let timeoutId: NodeJS.Timeout;
+		console.log(isActive);
+
+		if (!isActive) {
+			timeoutId = setTimeout(() => {
+				closeNavBar();
+			}, 200); // Set the desired delay in milliseconds (e.g., 2000 for 2 seconds)
+		}
+
+		return () => {
+			if (timeoutId) {
+				clearTimeout(timeoutId);
+			}
+		};
+	}, [isActive]);
+
 	return (
-		<div className="mobileNavbarDiv lg:hidden absolute pointer-events-auto  max-w-2/4 w-40 h-screen top-0 right-0">
-			<button className="ml-auto m-3 block" onClick={closeNavBar}>
-				<IoCloseOutline size={"2rem"} />
-			</button>
-			<ul className="px-7 text-right space-y-5">
-				<li>
-					<Link
-						href={"/"}
-						className="font-display text-[#EA3656] font-medium text-3xl"
+		<AnimatePresence>
+			{isActive && (
+				<m.div
+					key="mobileNavbarKey"
+					initial={{ x: 150 }}
+					animate={{ x: 0 }}
+					transition={{ type: "spring", stiffness: 60 }}
+					exit={{ x: 200 }}
+					className="mobileNavbarDiv lg:hidden absolute pointer-events-auto  max-w-2/4 w-40 h-screen top-0 right-0 overflow-hidden"
+				>
+					<button
+						className="ml-auto m-3 block"
+						onClick={() => {
+							setIsActive(false);
+						}}
 					>
-						Home
-					</Link>
-				</li>
-				<li>
-					<Link
-						href={"/about"}
-						className="font-display text-[#EA3656] font-medium text-3xl"
-					>
-						About
-					</Link>
-				</li>
-				<li>
-					<Link
-						href={"/portfolio"}
-						className="font-display text-[#EA3656] font-medium text-3xl"
-					>
-						Portfolio
-					</Link>
-				</li>
-				<li>
-					<Link
-						href={"/contact"}
-						className="font-display text-[#EA3656] font-medium text-3xl"
-					>
-						Contact
-					</Link>
-				</li>
-				<li>
-					<Link
-						href={"https://github.com/furre-dev"}
-						className="font-display text-[#EA3656] font-medium text-3xl"
-					>
-						Home
-					</Link>
-				</li>
-			</ul>
-		</div>
+						<IoCloseOutline size={"2rem"} />
+					</button>
+					<ul className="px-7 space-y-6">
+						<m.li
+							initial={{ x: 180 }}
+							animate={{ x: 0 }}
+							transition={{ type: "spring", delay: 0.4 }}
+						>
+							<Link
+								href={"/"}
+								className="font-display text-[#EA3656] font-light text-3xl"
+							>
+								Home
+							</Link>
+						</m.li>
+						<m.li
+							initial={{ x: 180 }}
+							animate={{ x: 0 }}
+							transition={{ type: "spring", delay: 0.5 }}
+						>
+							<Link
+								href={"/about"}
+								className="font-display text-[#EA3656] font-light text-3xl"
+							>
+								About
+							</Link>
+						</m.li>
+						<m.li
+							initial={{ x: 180 }}
+							animate={{ x: 0 }}
+							transition={{ type: "spring", delay: 0.6 }}
+						>
+							<Link
+								href={"/portfolio"}
+								className="font-display text-[#EA3656] font-light text-3xl"
+							>
+								Portfolio
+							</Link>
+						</m.li>
+						<m.li
+							initial={{ x: 180 }}
+							animate={{ x: 0 }}
+							transition={{ type: "spring", delay: 0.7 }}
+						>
+							<Link
+								href={"/contact"}
+								className="font-display text-[#EA3656] font-light text-3xl"
+							>
+								Contact
+							</Link>
+						</m.li>
+						<m.li
+							initial={{ x: 180 }}
+							animate={{ x: 0 }}
+							transition={{ type: "spring", delay: 0.8 }}
+						>
+							<Link
+								href={"https://github.com/furre-dev"}
+								className="font-display text-[#EA3656] font-light text-3xl"
+							>
+								Github
+							</Link>
+						</m.li>
+					</ul>
+				</m.div>
+			)}
+		</AnimatePresence>
 	);
 }

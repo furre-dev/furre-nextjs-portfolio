@@ -6,6 +6,7 @@ import Link from "next/link";
 import DiscordStatus from "./DiscordStatus";
 import MobileNavbar from "./MobileNavbar";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { motion as m } from "framer-motion";
 
 function Navbar() {
 	const pathname = usePathname();
@@ -13,7 +14,7 @@ function Navbar() {
 	const [selectedColorScheme, setSelectedColorScheme] = useState<
 		"primary" | "secondary" | "tertiary"
 	>("primary");
-	const [mobileNavActive, setMobileNavActive] = useState<boolean>(true);
+	const [mobileNavActive, setMobileNavActive] = useState<boolean>(false);
 
 	useEffect(() => {
 		switch (pathname) {
@@ -76,16 +77,24 @@ function Navbar() {
 					N.
 				</Link>
 				{mobileNavActive ? (
-					<MobileNavbar closeNavBar={() => setMobileNavActive(false)} />
+					<MobileNavbar
+						closeNavBar={() => {
+							console.log("done");
+							setMobileNavActive(false);
+						}}
+					/>
 				) : (
-					<button
+					<m.button
+						initial={{ y: -40 }}
+						animate={{ y: 0 }}
+						transition={{ type: "spring" }}
 						onClick={() => {
 							setMobileNavActive(true);
 						}}
-						className="absolute top-0 right-0 p-3 z-100 pointer-events-auto"
+						className="absolute lg:hidden top-0 right-0 p-3 z-100 pointer-events-auto"
 					>
 						<RxHamburgerMenu size={"1.5rem"} />
-					</button>
+					</m.button>
 				)}
 				<ul className="space-x-16 hidden lg:flex items-center text-black">
 					{pathname !== "/" ? (
