@@ -15,7 +15,7 @@ export default function MobileNavbar({
 		if (!isActive) {
 			timeoutId = setTimeout(() => {
 				closeNavBar();
-			}, 200); // Set the desired delay in milliseconds (e.g., 2000 for 2 seconds)
+			}, 410); // Set the desired delay in milliseconds (e.g., 2000 for 2 seconds)
 		}
 
 		return () => {
@@ -30,10 +30,10 @@ export default function MobileNavbar({
 			{isActive && (
 				<m.div
 					key="mobileNavbarKey"
-					initial={{ x: 150 }}
+					initial={{ x: 230 }}
 					animate={{ x: 30 }}
 					transition={{ type: "spring", stiffness: 60 }}
-					exit={{ x: 200 }}
+					exit={{ x: 230 }}
 					className="bg-[#ea3657e3] rounded-l-xl lg:hidden absolute pointer-events-auto  max-w-2/4 w-52 h-screen top-0 right-0 overflow-hidden"
 				>
 					<button
@@ -48,7 +48,7 @@ export default function MobileNavbar({
 						<m.li
 							initial={{ x: 180 }}
 							animate={{ x: 0 }}
-							transition={{ type: "spring", delay: 0.4 }}
+							transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
 						>
 							<Link
 								href={"/"}
@@ -60,7 +60,7 @@ export default function MobileNavbar({
 						<m.li
 							initial={{ x: 180 }}
 							animate={{ x: 0 }}
-							transition={{ type: "spring", delay: 0.5 }}
+							transition={{ type: "spring", stiffness: 60, delay: 0.5 }}
 						>
 							<Link
 								href={"/about"}
@@ -72,7 +72,7 @@ export default function MobileNavbar({
 						<m.li
 							initial={{ x: 180 }}
 							animate={{ x: 0 }}
-							transition={{ type: "spring", delay: 0.6 }}
+							transition={{ type: "spring", stiffness: 60, delay: 0.6 }}
 						>
 							<Link
 								href={"/portfolio"}
@@ -84,7 +84,7 @@ export default function MobileNavbar({
 						<m.li
 							initial={{ x: 180 }}
 							animate={{ x: 0 }}
-							transition={{ type: "spring", delay: 0.7 }}
+							transition={{ type: "spring", stiffness: 60, delay: 0.7 }}
 						>
 							<Link
 								href={"/contact"}
@@ -96,7 +96,7 @@ export default function MobileNavbar({
 						<m.li
 							initial={{ x: 180 }}
 							animate={{ x: 0 }}
-							transition={{ type: "spring", delay: 0.8 }}
+							transition={{ type: "spring", stiffness: 60, delay: 0.8 }}
 						>
 							<Link
 								href={"https://github.com/furre-dev"}
