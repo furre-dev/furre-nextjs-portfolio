@@ -48,7 +48,7 @@ export default function MobileNavbar({
 						<m.li
 							initial={{ x: 180 }}
 							animate={{ x: 0 }}
-							transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
+							transition={{ type: "spring", stiffness: 60, delay: 0.4 }}
 						>
 							<Link
 								href={"/"}
