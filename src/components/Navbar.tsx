@@ -62,7 +62,7 @@ function Navbar() {
 
 	return (
 		<nav
-			className={"sticky w-full px-4 mx-auto top-0 z-40 pointer-events-none"}
+			className={"sticky w-screen px-4 mx-auto top-0 z-40 pointer-events-none"}
 		>
 			<div className="flex justify-center lg:justify-between items-center py-3  md:py-10">
 				<Link
@@ -93,7 +93,7 @@ function Navbar() {
 						}}
 						className="absolute lg:hidden top-0 right-0 p-3 z-100 pointer-events-auto"
 					>
-						<RxHamburgerMenu size={"1.5rem"} />
+						<RxHamburgerMenu size={"1.5rem"} color="#454555" />
 					</m.button>
 				)}
 				<ul className="space-x-16 hidden lg:flex items-center text-black">

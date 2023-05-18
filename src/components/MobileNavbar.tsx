@@ -31,18 +31,18 @@ export default function MobileNavbar({
 				<m.div
 					key="mobileNavbarKey"
 					initial={{ x: 150 }}
-					animate={{ x: 0 }}
+					animate={{ x: 30 }}
 					transition={{ type: "spring", stiffness: 60 }}
 					exit={{ x: 200 }}
-					className="mobileNavbarDiv lg:hidden absolute pointer-events-auto  max-w-2/4 w-40 h-screen top-0 right-0 overflow-hidden"
+					className="bg-[#ea3657e3] rounded-l-xl lg:hidden absolute pointer-events-auto  max-w-2/4 w-52 h-screen top-0 right-0 overflow-hidden"
 				>
 					<button
-						className="ml-auto m-3 block"
+						className="ml-auto mt-2 mr-10 block"
 						onClick={() => {
 							setIsActive(false);
 						}}
 					>
-						<IoCloseOutline size={"2rem"} />
+						<IoCloseOutline size={"2rem"} color="#454555" />
 					</button>
 					<ul className="px-7 space-y-6">
 						<m.li
@@ -52,7 +52,7 @@ export default function MobileNavbar({
 						>
 							<Link
 								href={"/"}
-								className="font-display text-[#EA3656] font-light text-3xl"
+								className="font-display text-[#F1F8F7] font-light text-3xl"
 							>
 								Home
 							</Link>
@@ -64,7 +64,7 @@ export default function MobileNavbar({
 						>
 							<Link
 								href={"/about"}
-								className="font-display text-[#EA3656] font-light text-3xl"
+								className="font-display text-[#F1F8F7] font-light text-3xl"
 							>
 								About
 							</Link>
@@ -76,7 +76,7 @@ export default function MobileNavbar({
 						>
 							<Link
 								href={"/portfolio"}
-								className="font-display text-[#EA3656] font-light text-3xl"
+								className="font-display text-[#F1F8F7] font-light text-3xl"
 							>
 								Portfolio
 							</Link>
@@ -88,7 +88,7 @@ export default function MobileNavbar({
 						>
 							<Link
 								href={"/contact"}
-								className="font-display text-[#EA3656] font-light text-3xl"
+								className="font-display text-[#F1F8F7] font-light text-3xl"
 							>
 								Contact
 							</Link>
@@ -101,7 +101,7 @@ export default function MobileNavbar({
 							<Link
 								href={"https://github.com/furre-dev"}
 								target="_blank"
-								className="font-display text-[#EA3656] font-light text-3xl"
+								className="font-display text-[#F1F8F7] font-light text-3xl"
 							>
 								Github
 							</Link>
