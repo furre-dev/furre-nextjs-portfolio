@@ -62,7 +62,9 @@ function Navbar() {
 
 	return (
 		<nav
-			className={"sticky w-screen px-4 mx-auto top-0 z-40 pointer-events-none"}
+			className={
+				"sticky lg:w-full w-screen px-4 mx-auto top-0 z-40 pointer-events-none"
+			}
 		>
 			<div className="flex justify-center lg:justify-between items-center py-3  md:py-10">
 				<Link
