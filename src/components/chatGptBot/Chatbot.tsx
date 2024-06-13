@@ -44,7 +44,6 @@ export default function Chatbot() {
 		fetchData();
 	}, []);
 
-	const [loading, setLoading] = useState(false);
 	const [inputVal, setInputVal] = useState("");
 	const [resMessage, setResMessage] = useState();
 	const [resArr, setResArr] = useState([]);
@@ -97,16 +96,12 @@ export default function Chatbot() {
 		setSentArr(newSentArr);
 		(async () => {
 			try {
-				setLoading(true);
 				const res = await fetch("/api/openai-gpt", {
 					method: "POST",
 					headers: {
 						"Content-type": "application/json",
 					},
-					body: JSON.stringify({
-						userMessages: newSentArr,
-						cavemanMessages: resArr,
-					}),
+					body: JSON.stringify({ messages: newSentArr }),
 				});
 
 				const data = await res.json();
@@ -120,8 +115,6 @@ export default function Chatbot() {
 				setSentArr([]);
 				setResArr([]);
 				setInputVal("");
-			} finally {
-				setLoading(false);
 			}
 		})();
 	}
@@ -144,18 +137,11 @@ export default function Chatbot() {
                         <img alt="caveman illustration" src="/botProfilePic.png" className="scale-150" />
                         </div> */}
 					<div className="flex items-center justify-between w-full">
-						<h1 className="text-white text-lg font-sans">
-							Chat with <span className="font-bold">Caveman</span>
-						</h1>
+						<h1 className="text-white text-lg font-sans font-bold">Caveman</h1>
 						<IoMdRadioButtonOn
-							className={`text-lg self-end -translate-y-1.5 rounded-full ${
-								apiResponse ? "animate-pulse text-[#32CD32]" : "text-[#262432]"
-							}`}
-							style={
-								apiResponse
-									? { boxShadow: "inset 0 0 20px rgba(50, 205, 50, 0.21)" }
-									: {}
-							}
+							className="self-end -translate-y-1.5"
+							size={"1rem"}
+							color={apiResponse ? "green" : "#262432"}
 						/>
 					</div>
 				</div>
@@ -200,11 +186,11 @@ export default function Chatbot() {
 							return (
 								<div key={index + uuidv4()}>
 									<SentMsg text={message} />
-
-									{index < resArr.length && (
+									{index < resArr.length ? (
 										<RecievedMsg text={resArr[index]} />
+									) : (
+										""
 									)}
-
 									<div
 										ref={
 											index === (sentArr.length || resArr.length) - 1
@@ -212,13 +198,6 @@ export default function Chatbot() {
 												: undefined
 										}
 									/>
-
-									{index === (sentArr.length || resArr.length) - 1 &&
-										loading && (
-											<div className="bg-gray-200 mr-auto mt-4 w-max max-w-[80%] h-max px-3 rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] animate-pulse ">
-												• • •
-											</div>
-										)}
 								</div>
 							);
 						})}
